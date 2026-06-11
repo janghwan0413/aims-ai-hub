@@ -7,11 +7,12 @@
 <style>
   :root{
     --bg:#0e1014; --card:#191c23; --ink:#e9ecf3; --muted:#98a1b1; --line:#2b303b;
-    --brand:#8b93ff; --brand-soft:#222843;
+    --brand:#8b93ff; --brand-soft:#222843; --lime:#d3f84b;
     --expo:#ff922b; --expo-bg:#34250f;
     --conf:#4dabf7; --conf-bg:#13283b;
     --seminar:#51cf66; --seminar-bg:#13301e;
     --meetup:#cc5de8; --meetup-bg:#2c1736;
+    --contest:#20c997; --contest-bg:#0f2f27;
     --model:#4dabf7; --video:#ff922b; --image:#cc5de8; --industry:#51cf66; --creative:#ffd43b;
     --today:rgba(255,212,59,.14);
     --shadow:0 1px 2px rgba(0,0,0,.5),0 10px 30px rgba(0,0,0,.35);
@@ -24,9 +25,11 @@
     line-height:1.55;}
   .wrap{max-width:1240px;margin:0 auto;padding:24px 20px 64px;}
   header.top{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px;justify-content:space-between;margin-bottom:14px;}
-  h1{font-size:24px;margin:0;letter-spacing:.02em;}
-  h1 .tag{font-size:12px;color:#0e1014;background:linear-gradient(90deg,#8b93ff,#5cc8ff);padding:3px 9px;border-radius:999px;font-weight:800;vertical-align:middle;margin-left:6px;}
-  .sub{color:var(--muted);font-size:13px;margin:6px 0 0;max-width:820px;}
+  h1{font-size:24px;margin:0;letter-spacing:.02em;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .brand{display:inline-block;background:var(--lime);color:#0d1407;font-weight:900;font-size:21px;
+    padding:3px 11px;border-radius:9px;letter-spacing:.5px;line-height:1.1;}
+  h1 .tag{font-size:12px;color:#0e1014;background:linear-gradient(90deg,#8b93ff,#5cc8ff);padding:3px 9px;border-radius:999px;font-weight:800;}
+  .sub{color:var(--muted);font-size:13px;margin:8px 0 0;max-width:820px;}
   .sub b{color:#cfd5e3;}
   .updated{font-size:12px;color:var(--muted);background:var(--card);border:1px solid var(--line);
     padding:6px 12px;border-radius:999px;box-shadow:var(--shadow);white-space:nowrap;}
@@ -89,6 +92,7 @@
     font-size:11px;line-height:1.25;text-decoration:none;cursor:pointer;overflow:hidden;}
   .ev.expo{background:var(--expo);color:#1a1206;} .ev.conference{background:var(--conf);color:#08182a;}
   .ev.seminar{background:var(--seminar);color:#062611;} .ev.meetup{background:var(--meetup);color:#fff;}
+  .ev.contest{background:var(--contest);color:#06251c;}
   .ev:hover{filter:brightness(1.12);}
 
   h2.section{font-size:16px;margin:26px 0 12px;}
@@ -104,14 +108,18 @@
   .ethumb.conference{background:linear-gradient(135deg,#13283b,#1e3c55);}
   .ethumb.seminar{background:linear-gradient(135deg,#13301e,#1d4a2e);}
   .ethumb.meetup{background:linear-gradient(135deg,#2c1736,#48235d);}
+  .ethumb.contest{background:linear-gradient(135deg,#0f2f27,#16463a);}
   .ethumb::after{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:30px;opacity:.5;}
   .ethumb.expo::after{content:"🏢";} .ethumb.conference::after{content:"🎤";}
-  .ethumb.seminar::after{content:"💻";} .ethumb.meetup::after{content:"🤝";}
+  .ethumb.seminar::after{content:"💻";} .ethumb.meetup::after{content:"🤝";} .ethumb.contest::after{content:"🏆";}
   .ethumb img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block;}
   .ethumb .edate{position:absolute;left:0;right:0;bottom:0;z-index:2;background:rgba(8,10,14,.72);color:#fff;font-size:12px;font-weight:700;text-align:center;padding:3px 6px;}
   .rbody{flex:1;min-width:0;}
   .rtitle{font-size:15px;font-weight:700;margin:0 0 5px;color:var(--ink);transition:.12s;display:flex;gap:7px;align-items:center;flex-wrap:wrap;}
   .weekb{font-size:10px;font-weight:800;color:#0e1014;background:#ffd43b;padding:1px 7px;border-radius:5px;}
+  .fitrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 7px;}
+  .fit{font-size:11px;font-weight:800;color:#0d1407;background:var(--lime);padding:1px 8px;border-radius:5px;white-space:nowrap;}
+  .why{font-size:11.5px;color:var(--muted);}
   .dlbar{display:inline-block;font-size:12px;font-weight:700;padding:3px 10px;border-radius:7px;margin:0 0 8px;border:1px solid transparent;}
   .dlbar.dl-urgent{background:#3a1518;color:#ff8787;border-color:#7a2a2f;}
   .dlbar.dl-soon{background:#3a2f10;color:#ffd43b;border-color:#6b5512;}
@@ -122,6 +130,7 @@
   .badge{display:inline-flex;align-items:center;gap:5px;font-size:11px;padding:2px 8px;border-radius:6px;font-weight:700;}
   .badge.expo{background:var(--expo-bg);color:#ffb86b;} .badge.conference{background:var(--conf-bg);color:#7cc4fb;}
   .badge.seminar{background:var(--seminar-bg);color:#74dd86;} .badge.meetup{background:var(--meetup-bg);color:#e29bf5;}
+  .badge.contest{background:var(--contest-bg);color:#63e6be;}
   .fmt{font-size:11px;padding:2px 8px;border-radius:6px;border:1px solid var(--line);color:var(--muted);background:#20242d;}
   .fmt.onsite{border-color:#5c2b2b;color:#ff8787;background:#2a1717;}
   .fmt.hybrid{border-color:#2b5c33;color:#8ce99a;background:#122619;}
@@ -167,7 +176,7 @@
   .src{font-size:12px;color:var(--muted);} .ndate{font-size:12px;color:var(--muted);margin-left:auto;}
   .newb{font-size:10px;font-weight:800;color:#0e1014;background:#ffd43b;padding:1px 7px;border-radius:5px;}
   .item h3{font-size:16px;margin:2px 0 6px;line-height:1.4;color:var(--ink);transition:.12s;}
-  .item p{margin:0;font-size:13.5px;color:#c4cbd8;}
+  .item p{margin:0 0 6px;font-size:13.5px;color:#c4cbd8;}
 
   .panel{display:none;} .panel.active{display:block;}
   .side-sec{display:none;} .side-sec.active{display:block;}
@@ -192,14 +201,14 @@
 <div class="wrap">
   <header class="top">
     <div>
-      <h1>AIMS 生成AIハブ <span class="tag">AIMS厳選</span></h1>
-      <p class="sub">AIMSの業務（<b>AI動画・映像／画像・デザイン／マーケ・SNS／ツール・エージェント実装</b>）に関連する、東京の<b>イベント</b>と<b>AI最新ニュース</b>を1ページに集約。自動で最新化されます。</p>
+      <h1><span class="brand">AIMS</span> 生成AIハブ <span class="tag">厳選</span></h1>
+      <p class="sub">株式会社AIMSの業務（<b>戦略型AIヒューマン／映像・画像／ブランドコミュニケーション</b>）に直結する、東京＋世界の<b>イベント・コンテスト</b>と<b>AI最新ニュース</b>を、AIクリエイター視点で厳選。各項目に<b>★AIMS適合度</b>付き。自動で最新化されます。</p>
     </div>
     <span class="updated" id="updated">最終更新: 2026年6月10日</span>
   </header>
 
   <div class="tabs">
-    <button class="tab active" data-tab="cal">📅 イベントカレンダー</button>
+    <button class="tab active" data-tab="cal">📅 イベント・コンテスト</button>
     <button class="tab" data-tab="news">📰 AI最新ニュース</button>
     <button class="tab" data-tab="archive">🗄 ニュースアーカイブ</button>
   </div>
@@ -209,6 +218,7 @@
       <div class="side-sec active" id="side-cal">
         <div class="fgroup">
           <div class="ftop"><span class="ftitle">種類</span><button class="fall" data-all="k">全切替</button></div>
+          <button class="fitem" data-k="contest"><span class="fdot" style="background:var(--contest)"></span>コンテスト・大会<span class="fck">✓</span></button>
           <button class="fitem" data-k="expo"><span class="fdot" style="background:var(--expo)"></span>大型EXPO・展示会<span class="fck">✓</span></button>
           <button class="fitem" data-k="conference"><span class="fdot" style="background:var(--conf)"></span>カンファレンス<span class="fck">✓</span></button>
           <button class="fitem" data-k="seminar"><span class="fdot" style="background:var(--seminar)"></span>セミナー・講座<span class="fck">✓</span></button>
@@ -248,7 +258,7 @@
           <button class="fitem" data-ac="creative"><span class="fdot" style="background:var(--creative)"></span>マーケ・クリエイティブ<span class="fck">✓</span></button>
           <button class="fitem" data-ac="industry"><span class="fdot" style="background:var(--industry)"></span>業界・ビジネス<span class="fck">✓</span></button>
         </div>
-        <div class="sidenote">過去に掲載した記事を月別に蓄積しています（重複は自動除外）。検索・カテゴリ・並び替えで遡れます。</div>
+        <div class="sidenote">過去に掲載した記事を月別に蓄積（重複は自動除外）。検索・カテゴリ・並び替えで遡れます。</div>
       </div>
     </aside>
 
@@ -256,7 +266,7 @@
       <section class="panel active" id="panel-cal">
         <div class="subbar">
           <label class="search"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#98a1b1" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-            <input id="qcal" type="text" placeholder="イベントを検索（名前・会場・主催）"></label>
+            <input id="qcal" type="text" placeholder="イベント・コンテストを検索"></label>
           <div class="sortbtns" id="sortcal"><button data-s="asc" class="active">近い順</button><button data-s="desc">遠い順</button></div>
         </div>
         <div class="navbar">
@@ -266,24 +276,24 @@
           <button class="today-btn" id="todayBtn">今日</button>
           <span class="spacer"></span>
           <span class="legend">
+            <i><span class="d" style="background:var(--contest)"></span>コンテスト</i>
             <i><span class="d" style="background:var(--expo)"></span>EXPO</i>
             <i><span class="d" style="background:var(--conf)"></span>カンファ</i>
             <i><span class="d" style="background:var(--seminar)"></span>セミナー</i>
-            <i><span class="d" style="background:var(--meetup)"></span>勉強会</i>
           </span>
         </div>
         <div class="cal">
           <div class="dow"><div>日</div><div>月</div><div>火</div><div>水</div><div>木</div><div>金</div><div>土</div></div>
           <div class="grid" id="grid"></div>
         </div>
-        <h2 class="section">📋 イベント一覧</h2>
+        <h2 class="section">📋 イベント・コンテスト一覧（★AIMS適合度つき）</h2>
         <div class="agenda" id="agenda"></div>
       </section>
 
       <section class="panel" id="panel-news">
         <div class="subbar">
           <label class="search"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#98a1b1" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-            <input id="qnews" type="text" placeholder="最新ニュースを検索（タイトル・出典）"></label>
+            <input id="qnews" type="text" placeholder="最新ニュースを検索"></label>
           <div class="sortbtns" id="sortnews"><button data-s="desc" class="active">新着順</button><button data-s="asc">古い順</button></div>
         </div>
         <div id="hero"></div>
@@ -293,7 +303,7 @@
       <section class="panel" id="panel-archive">
         <div class="subbar">
           <label class="search"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#98a1b1" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-            <input id="qarch" type="text" placeholder="過去記事を検索（タイトル・出典）"></label>
+            <input id="qarch" type="text" placeholder="過去記事を検索"></label>
           <div class="sortbtns" id="sortarch"><button data-s="desc" class="active">新着順</button><button data-s="asc">古い順</button></div>
         </div>
         <div class="list" id="archlist"></div>
@@ -302,67 +312,53 @@
   </div>
 
   <footer>
-    イベント情報源：amanaINSIGHTS / connpass / TECH PLAY / Peatix / こくちーずプロ 等。　ニュース情報源：Ledge.ai / ASCII×AI / 日経xTECH(AI) 等。<br>
-    画像・要約の著作権は各出典に帰属します。詳細は各記事・公式ページをご確認ください。　<span id="count"></span>
+    選定基準：AIMS適合度（コア適合35／実務即戦力30／新規性20／アクセス性15・60点以上を掲載）。読手＝AIクリエイター（映像・画像・AIヒューマン）。<br>
+    情報源：amanaINSIGHTS / connpass / TECH PLAY / Peatix / 各コンテスト公式、ニュース：Ledge.ai / ASCII×AI / 日経xTECH(AI) 等。画像・要約の著作権は各出典に帰属。　<span id="count"></span>
   </footer>
 </div>
 
 <script>
 // =========================== EVENTS_START ===========================
+// type: contest|expo|conference|seminar|meetup / format: onsite|hybrid|online
+// themes:[video|image|marketing|tools|business] / img?, deadline?, score(0-100), why
 const EVENTS = [
-  {start:"2026-06-11", title:"AWSでAIエージェント構築を始めよう！Amazon Bedrock AgentCore 実践入門", type:"seminar", format:"online", time:"12:00–13:00", area:"オンライン", venue:"オンライン", org:"Findy", fee:"無料", themes:["tools"], img:"https://s3.techplay.jp/tp-images/event/b272407d4063fc4bdb2689546551249f201b4154.png", deadline:"2026-06-11", url:"https://techplay.jp/event/995574"},
-  {start:"2026-06-17", title:"【アマナ A3】AIは“企画”を民主化したのか？〜プランナーゆる議論〜", type:"seminar", format:"online", time:"12:00–12:50", area:"オンライン", venue:"オンライン", org:"アマナ（A3）", fee:"無料", themes:["marketing","business","tools"], deadline:"2026-06-16", url:"https://insights.amana.jp/event/51597/"},
-  {start:"2026-06-19", title:"【CA×DeNA】AI駆動開発の最前線〜コンテキストエンジニアリング〜（再放送）", type:"seminar", format:"online", time:"12:00–13:00", area:"オンライン", venue:"オンライン", org:"Findy", fee:"無料", themes:["tools","business"], img:"https://s3.techplay.jp/tp-images/event/cd500b88c95b5bcfaf7803fbbc7ea6768c4e0613.jpg", deadline:"2026-06-19", url:"https://techplay.jp/event/995868"},
-  {start:"2026-06-23", title:"GitHub Copilot最新アップデート - 「一歩先」の実践活用術", type:"seminar", format:"online", time:"12:00–13:00", area:"オンライン", venue:"オンライン", org:"Findy", fee:"無料", themes:["tools"], img:"https://s3.techplay.jp/tp-images/event/641d474c2978f61a930e0cae27afba4c66dbd77f.png", deadline:"2026-06-23", url:"https://techplay.jp/event/996451"},
-  {start:"2026-06-24", title:"Claude Codeで実現する レビュー負荷削減の実践知", type:"seminar", format:"online", time:"12:30–13:00", area:"オンライン", venue:"オンライン", org:"Findy", fee:"無料", themes:["tools"], img:"https://s3.techplay.jp/tp-images/event/02e953c50881f36d355e0f223f29686de720c7ab.jpg", deadline:"2026-06-24", url:"https://techplay.jp/event/996640"},
-  {start:"2026-07-03", title:"AI駆動開発の最前線【Slalom Tech Night vol.1】", type:"meetup", format:"hybrid", time:"19:00–20:40", area:"港区・愛宕（オンライン併催）", venue:"愛宕グリーンヒルズMORIタワー", org:"Slalom × TECH PLAY", fee:"無料", themes:["tools","business"], img:"https://s3.techplay.jp/tp-images/event/ba3dd8fa6505c7d0f42c58000d0bfb8aec6f61e0.jpg", deadline:"2026-07-03", url:"https://techplay.jp/event/995896"},
-  {start:"2026-07-23", end:"2026-07-24", title:"AI Agent Day 2026 Summer", type:"conference", format:"online", time:"終日", area:"オンライン（懇親会は東京）", venue:"オンライン", org:"AI Agent Day 実行委員会", fee:"無料", themes:["tools","business"], deadline:"2026-07-23", url:"https://peatix.com/us/event/4982007"},
-  {start:"2026-07-30", end:"2026-07-31", title:"AI駆動開発カンファレンス 2026夏", type:"conference", format:"hybrid", time:"11:00–18:00", area:"港区・品川（オンライン併催）", venue:"日本マイクロソフト品川オフィス", org:"AI駆動開発勉強会", fee:"現地有料／オンライン無料", themes:["tools"], deadline:"2026-07-30", url:"https://aid.connpass.com/event/392230/"},
-  {start:"2026-08-27", title:"AI博覧会 Summer 2026", type:"expo", format:"onsite", time:"10:00–18:00", area:"新宿区", venue:"新宿住友ビル 三角広場", org:"アイスマイリー", fee:"入場無料（登録制）", themes:["business","marketing"], url:"https://aismiley.co.jp/ai_hakurankai/"},
-  {start:"2026-09-03", end:"2026-09-04", title:"AI Commerce EXPO / SNS運用戦略Expo 2026", type:"expo", format:"onsite", time:"10:00–18:00", area:"港区・浜松町", venue:"東京都立産業貿易センター浜松町館 5F", org:"ナノオプト・メディア", fee:"入場無料（登録制）", themes:["marketing","video","business"], url:"https://f2ff.jp/event/commerce-sns"},
-  {start:"2026-10-05", end:"2026-10-07", title:"生成AIサミット（GenAI/SUM）2026 ★大型注目イベント", type:"conference", format:"onsite", time:"終日", area:"千代田区・九段下", venue:"九段会館テラス", org:"日本経済新聞社", fee:"要確認", themes:["business"], url:"https://www.xsum.jp/gai/"}
+  {start:"2026-06-17", title:"【アマナ A3】AIは“企画”を民主化したのか？〜プランナーゆる議論〜", type:"seminar", format:"online", time:"12:00–12:50", area:"オンライン", venue:"オンライン", org:"アマナ（A3）", fee:"無料", themes:["marketing","business","tools"], deadline:"2026-06-16", score:92, why:"amanaグループのAIクリエイティブ／企画。AIMSの自社領域ど真ん中", url:"https://insights.amana.jp/event/51597/"},
+  {start:"2026-08-27", title:"AI博覧会 Summer 2026", type:"expo", format:"onsite", time:"10:00–18:00", area:"新宿区", venue:"新宿住友ビル 三角広場", org:"アイスマイリー", fee:"入場無料（登録制）", themes:["business","marketing","image"], score:74, why:"AI総合EXPO。映像・アバター系の出展やデモを実機で確認できる", url:"https://aismiley.co.jp/ai_hakurankai/"},
+  {start:"2026-08-31", title:"Sparknify Human vs. AI Film Festival 2026（作品応募）", type:"contest", format:"online", time:"応募締切", area:"世界（オンライン応募）", venue:"オンライン応募", org:"Sparknify", fee:"要項確認", themes:["video","image"], deadline:"2026-08-31", score:85, why:"応募できる世界のAI映像コンテスト。実制作の腕試し・露出に最適", url:"https://www.sparknify.com/human-vs-ai-film-festival"},
+  {start:"2026-09-03", end:"2026-09-04", title:"AI Commerce EXPO / SNS運用戦略Expo 2026", type:"expo", format:"onsite", time:"10:00–18:00", area:"港区・浜松町", venue:"東京都立産業貿易センター浜松町館 5F", org:"ナノオプト・メディア", fee:"入場無料（登録制）", themes:["marketing","video","business"], score:90, why:"生成AI×SNS・動画・ブランドクリエイティブのハンズオン多数", url:"https://f2ff.jp/event/commerce-sns"},
+  {start:"2026-10-05", end:"2026-10-07", title:"生成AIサミット（GenAI/SUM）2026", type:"conference", format:"onsite", time:"終日", area:"千代田区・九段下", venue:"九段会館テラス", org:"日本経済新聞社", fee:"要確認", themes:["business"], score:62, why:"経営・業界トレンドの把握向け（制作直結は弱め・参考枠）", url:"https://www.xsum.jp/gai/"}
 ];
 // =========================== EVENTS_END ===========================
 
 // =========================== NEWS_START ===========================
+// cat: model|video|image|industry|creative / img?, score(0-100), why
 const NEWS = [
-  {date:"2026-06-09", cat:"model", title:"GitHub「Copilotアプリ」発表 ― 複数AIエージェントを管理する開発実行基盤", src:"Ledge.ai", summary:"複数のAIエージェントを束ねて開発タスクを実行する新しい基盤。AIによる開発の“司令塔”を目指す。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/MSFT_Build_Blog_Header_01_a1a135e42e/MSFT_Build_Blog_Header_01_a1a135e42e.webp", url:"https://ledge.ai/articles/github_copilot_app_agent_development_platform"},
-  {date:"2026-06-08", cat:"industry", title:"Anthropic、AIが後継AIを作る「再帰的自己改善」に警鐘 ― Claudeが自社コードの8割超を作成", src:"Ledge.ai", summary:"開発の加速に伴うリスクを指摘し、減速・一時停止メカニズムを提言。AI開発の安全性議論が活発化。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/whenaibuildeitself_dc9c65aeb1/whenaibuildeitself_dc9c65aeb1.jpg", url:"https://ledge.ai/articles/anthropic_recursive_self_improvement_ai_development_pause"},
-  {date:"2026-06-08", cat:"industry", title:"SBIグループ、Claudeを全役職員に展開へ ― Anthropicと金融AIエージェント開発", src:"Ledge.ai", summary:"全社的なClaude導入に加え、金融特化のAIエージェントやClaude Securityの共同検証も進める。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/Chat_GPT_Image_2026_6_7_00_14_12_65d7e2f3ad/Chat_GPT_Image_2026_6_7_00_14_12_65d7e2f3ad.jpg", url:"https://ledge.ai/articles/sbi_anthropic_claude_financial_ai_agent"},
-  {date:"2026-06-07", cat:"model", title:"Microsoft「Project Solara」発表 ― アプリではなくエージェントを呼び出す新体験", src:"Ledge.ai", summary:"デバイス向けにAIエージェント中心の操作基盤を提示。アプリ起動からエージェント呼び出しへ。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/00_Title_Page_scaled_3f4db70bc5/00_Title_Page_scaled_3f4db70bc5.jpg", url:"https://ledge.ai/articles/microsoft_project_solara_agent_first_devices"},
-  {date:"2026-06-06", cat:"video", title:"ElevenLabs、AI吹替モデル「Dubbing v2」提供開始 ― 話者の感情やトーンを再現、90以上の言語に対応", src:"Ledge.ai", summary:"動画の多言語化に直結。オリジナル話者の感情・トーンを保ったまま吹き替えが可能に。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12.jpg", url:"https://ledge.ai/articles/dubbing_v2_elevenlabs_ai_dubbing"},
-  {date:"2026-06-04", cat:"model", title:"NVIDIA、GTC Taipei 2026でAIエージェント基盤を一挙発表（RTX Spark / Cosmos 3 ほか）", src:"Ledge.ai", summary:"PCからロボットまでを貫くAIエージェント／フィジカルAIの基盤群を発表。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/NVIDIA_GTC_Taipei_2026_a4b7031686/NVIDIA_GTC_Taipei_2026_a4b7031686.jpg", url:"https://ledge.ai/articles/nvidia_gtc_taipei_2026_ai_agents_physical_ai"},
-  {date:"2026-06-02", cat:"model", title:"OpenAIの「GPT-5.5」「Codex」、Amazon Bedrockで一般提供開始", src:"ASCII×AI", summary:"BedrockでOpenAI系モデルが利用可能に。マルチモデルの選択肢が拡大。", img:"https://ascii.jp/img/2026/06/02/4476324/s/dc239aa5137480f2.png", url:"https://ascii.jp/elem/000/004/407/4407119/"},
-  {date:"2026-06-01", cat:"creative", title:"生成AIの「おべっか」を抑え、本音アドバイザーにするプロンプト術", src:"ASCII×AI（柳谷智宣）", summary:"AIの過剰な肯定を避け、厳しい意見を引き出すプロンプトの使い分けを実践的に解説。", img:"https://ascii.jp/img/2026/05/22/4470296/s/c2a33a9656e0bd24.jpg", url:"https://ascii.jp/elem/000/004/404/4404185/"},
-  {date:"2026-05-28", cat:"creative", title:"米Amazon、AI生成アニメをPrime Videoで配信へ ― 「GenAI Creators' Fund」で3作品", src:"ASCII×AI", summary:"AWSとAmazon MGMがAI生成作品の制作を支援。映像クリエイティブのAI活用が一段と前進。", img:"https://ascii.jp/img/2026/05/28/4473840/s/cd22b1f6c457cad1.png", url:"https://ascii.jp/elem/000/004/406/4406008/"},
-  {date:"2026-05-25", cat:"image", title:"アニメ特化のローカル画像生成AI「Anima Base v1.0」公開 ― キャラの一貫性に強み", src:"ASCII×AI", summary:"ComfyUI共同開発のモデル。キャラクター一貫性の保持でローカル生成の限界を突破か。", img:"https://ascii.jp/img/2026/05/25/4471461/s/f52eebeb53e05b37.jpg", url:"https://ascii.jp/elem/000/004/404/4404597/"},
-  {date:"2026-05-20", cat:"video", title:"Google「Gemini Omni」シリーズ発表 ― 動画版「Nano Banana」がついに登場", src:"ASCII×AI", summary:"画像で人気のNano Bananaの動画版。Google I/O 2026にあわせて公開。", img:"https://ascii.jp/img/2026/05/20/4469029/s/ee23873804df7a3c.jpg", url:"https://ascii.jp/elem/000/004/403/4403465/"},
-  {date:"2026-05-15", cat:"video", title:"動画生成AIの「Runway」が日本進出 ― 東京オフィス開設、約62億円を初期投資", src:"ASCII×AI", summary:"国内の映像・広告制作市場を本格開拓。動画生成AIの日本展開が加速。", img:"https://ascii.jp/img/2026/05/15/4467006/s/511a62b29242e5cf.png", url:"https://ascii.jp/elem/000/004/402/4402511/"}
+  {date:"2026-06-06", cat:"video", title:"ElevenLabs、AI吹替モデル「Dubbing v2」提供開始 ― 話者の感情やトーンを再現、90以上の言語に対応", src:"Ledge.ai", summary:"AIヒューマンの多言語化に直結。話者の感情・トーンを保ったまま吹き替えが可能に。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12.jpg", score:88, why:"AIヒューマンの声・多言語展開に直結", url:"https://ledge.ai/articles/dubbing_v2_elevenlabs_ai_dubbing"},
+  {date:"2026-06-01", cat:"creative", title:"生成AIの「おべっか」を抑え、本音アドバイザーにするプロンプト術", src:"ASCII×AI（柳谷智宣）", summary:"AIの過剰な肯定を避け、厳しい意見を引き出すプロンプトの使い分けを実践的に解説。", img:"https://ascii.jp/img/2026/05/22/4470296/s/c2a33a9656e0bd24.jpg", score:66, why:"制作で効くプロンプトの実践Tips", url:"https://ascii.jp/elem/000/004/404/4404185/"},
+  {date:"2026-05-28", cat:"creative", title:"米Amazon、AI生成アニメをPrime Videoで配信へ ― 「GenAI Creators' Fund」で3作品", src:"ASCII×AI", summary:"AI生成作品が配信レベルへ。映像クリエイティブのAI活用が一段と前進。", img:"https://ascii.jp/img/2026/05/28/4473840/s/cd22b1f6c457cad1.png", score:78, why:"AI映像が配信レベルへ。制作・企画の事例として有用", url:"https://ascii.jp/elem/000/004/406/4406008/"},
+  {date:"2026-05-25", cat:"image", title:"アニメ特化のローカル画像生成AI「Anima Base v1.0」公開 ― キャラの一貫性に強み", src:"ASCII×AI", summary:"キャラクター一貫性に強い画像生成。AIヒューマン／キャラ制作に有用。", img:"https://ascii.jp/img/2026/05/25/4471461/s/f52eebeb53e05b37.jpg", score:80, why:"キャラ一貫性。AIヒューマン制作に直接活きる", url:"https://ascii.jp/elem/000/004/404/4404597/"},
+  {date:"2026-05-20", cat:"video", title:"Google「Gemini Omni」シリーズ発表 ― 動画版「Nano Banana」がついに登場", src:"ASCII×AI", summary:"動画生成の新潮流。制作の選択肢が拡大。", img:"https://ascii.jp/img/2026/05/20/4469029/s/ee23873804df7a3c.jpg", score:84, why:"動画生成の新潮流。制作ツールの選択肢拡大", url:"https://ascii.jp/elem/000/004/403/4403465/"},
+  {date:"2026-05-15", cat:"video", title:"動画生成AIの「Runway」が日本進出 ― 東京オフィス開設、約62億円を初期投資", src:"ASCII×AI", summary:"AI動画制作の主要ツールが日本本格展開。", img:"https://ascii.jp/img/2026/05/15/4467006/s/511a62b29242e5cf.png", score:86, why:"主要AI動画ツールの日本本格展開", url:"https://ascii.jp/elem/000/004/402/4402511/"}
 ];
 // =========================== NEWS_END ===========================
 
 // =========================== ARCHIVE_START ===========================
 const ARCHIVE = [
-  {date:"2026-06-09", cat:"model", title:"GitHub「Copilotアプリ」発表 ― 複数AIエージェントを管理する開発実行基盤", src:"Ledge.ai", summary:"複数のAIエージェントを束ねて開発タスクを実行する新しい基盤。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/MSFT_Build_Blog_Header_01_a1a135e42e/MSFT_Build_Blog_Header_01_a1a135e42e.webp", url:"https://ledge.ai/articles/github_copilot_app_agent_development_platform"},
-  {date:"2026-06-08", cat:"industry", title:"Anthropic、AIが後継AIを作る「再帰的自己改善」に警鐘 ― Claudeが自社コードの8割超を作成", src:"Ledge.ai", summary:"開発の加速に伴うリスクを指摘し、減速・一時停止メカニズムを提言。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/whenaibuildeitself_dc9c65aeb1/whenaibuildeitself_dc9c65aeb1.jpg", url:"https://ledge.ai/articles/anthropic_recursive_self_improvement_ai_development_pause"},
-  {date:"2026-06-08", cat:"industry", title:"SBIグループ、Claudeを全役職員に展開へ ― Anthropicと金融AIエージェント開発", src:"Ledge.ai", summary:"全社的なClaude導入に加え、金融特化のAIエージェントやClaude Securityの共同検証も進める。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/Chat_GPT_Image_2026_6_7_00_14_12_65d7e2f3ad/Chat_GPT_Image_2026_6_7_00_14_12_65d7e2f3ad.jpg", url:"https://ledge.ai/articles/sbi_anthropic_claude_financial_ai_agent"},
-  {date:"2026-06-07", cat:"model", title:"Microsoft「Project Solara」発表 ― アプリではなくエージェントを呼び出す新体験", src:"Ledge.ai", summary:"デバイス向けにAIエージェント中心の操作基盤を提示。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/00_Title_Page_scaled_3f4db70bc5/00_Title_Page_scaled_3f4db70bc5.jpg", url:"https://ledge.ai/articles/microsoft_project_solara_agent_first_devices"},
-  {date:"2026-06-06", cat:"video", title:"ElevenLabs、AI吹替モデル「Dubbing v2」提供開始 ― 話者の感情やトーンを再現、90以上の言語に対応", src:"Ledge.ai", summary:"動画の多言語化に直結。オリジナル話者の感情・トーンを保ったまま吹き替えが可能に。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12.jpg", url:"https://ledge.ai/articles/dubbing_v2_elevenlabs_ai_dubbing"},
-  {date:"2026-06-04", cat:"model", title:"NVIDIA、GTC Taipei 2026でAIエージェント基盤を一挙発表（RTX Spark / Cosmos 3 ほか）", src:"Ledge.ai", summary:"PCからロボットまでを貫くAIエージェント／フィジカルAIの基盤群を発表。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/NVIDIA_GTC_Taipei_2026_a4b7031686/NVIDIA_GTC_Taipei_2026_a4b7031686.jpg", url:"https://ledge.ai/articles/nvidia_gtc_taipei_2026_ai_agents_physical_ai"},
-  {date:"2026-06-02", cat:"model", title:"OpenAIの「GPT-5.5」「Codex」、Amazon Bedrockで一般提供開始", src:"ASCII×AI", summary:"BedrockでOpenAI系モデルが利用可能に。マルチモデルの選択肢が拡大。", img:"https://ascii.jp/img/2026/06/02/4476324/s/dc239aa5137480f2.png", url:"https://ascii.jp/elem/000/004/407/4407119/"},
-  {date:"2026-06-01", cat:"creative", title:"生成AIの「おべっか」を抑え、本音アドバイザーにするプロンプト術", src:"ASCII×AI（柳谷智宣）", summary:"AIの過剰な肯定を避け、厳しい意見を引き出すプロンプトの使い分けを実践的に解説。", img:"https://ascii.jp/img/2026/05/22/4470296/s/c2a33a9656e0bd24.jpg", url:"https://ascii.jp/elem/000/004/404/4404185/"},
-  {date:"2026-05-28", cat:"creative", title:"米Amazon、AI生成アニメをPrime Videoで配信へ ― 「GenAI Creators' Fund」で3作品", src:"ASCII×AI", summary:"AWSとAmazon MGMがAI生成作品の制作を支援。", img:"https://ascii.jp/img/2026/05/28/4473840/s/cd22b1f6c457cad1.png", url:"https://ascii.jp/elem/000/004/406/4406008/"},
-  {date:"2026-05-25", cat:"image", title:"アニメ特化のローカル画像生成AI「Anima Base v1.0」公開 ― キャラの一貫性に強み", src:"ASCII×AI", summary:"ComfyUI共同開発のモデル。キャラクター一貫性の保持でローカル生成の限界を突破か。", img:"https://ascii.jp/img/2026/05/25/4471461/s/f52eebeb53e05b37.jpg", url:"https://ascii.jp/elem/000/004/404/4404597/"},
-  {date:"2026-05-20", cat:"video", title:"Google「Gemini Omni」シリーズ発表 ― 動画版「Nano Banana」がついに登場", src:"ASCII×AI", summary:"画像で人気のNano Bananaの動画版。Google I/O 2026にあわせて公開。", img:"https://ascii.jp/img/2026/05/20/4469029/s/ee23873804df7a3c.jpg", url:"https://ascii.jp/elem/000/004/403/4403465/"},
-  {date:"2026-05-15", cat:"video", title:"動画生成AIの「Runway」が日本進出 ― 東京オフィス開設、約62億円を初期投資", src:"ASCII×AI", summary:"国内の映像・広告制作市場を本格開拓。", img:"https://ascii.jp/img/2026/05/15/4467006/s/511a62b29242e5cf.png", url:"https://ascii.jp/elem/000/004/402/4402511/"}
+  {date:"2026-06-06", cat:"video", title:"ElevenLabs、AI吹替モデル「Dubbing v2」提供開始 ― 話者の感情やトーンを再現、90以上の言語に対応", src:"Ledge.ai", summary:"AIヒューマンの多言語化に直結。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12.jpg", score:88, why:"AIヒューマンの声・多言語展開に直結", url:"https://ledge.ai/articles/dubbing_v2_elevenlabs_ai_dubbing"},
+  {date:"2026-06-01", cat:"creative", title:"生成AIの「おべっか」を抑え、本音アドバイザーにするプロンプト術", src:"ASCII×AI（柳谷智宣）", summary:"プロンプトの使い分けを実践解説。", img:"https://ascii.jp/img/2026/05/22/4470296/s/c2a33a9656e0bd24.jpg", score:66, why:"制作で効くプロンプトの実践Tips", url:"https://ascii.jp/elem/000/004/404/4404185/"},
+  {date:"2026-05-28", cat:"creative", title:"米Amazon、AI生成アニメをPrime Videoで配信へ ― 「GenAI Creators' Fund」で3作品", src:"ASCII×AI", summary:"AI映像が配信レベルへ。", img:"https://ascii.jp/img/2026/05/28/4473840/s/cd22b1f6c457cad1.png", score:78, why:"AI映像が配信レベルへ。事例参考", url:"https://ascii.jp/elem/000/004/406/4406008/"},
+  {date:"2026-05-25", cat:"image", title:"アニメ特化のローカル画像生成AI「Anima Base v1.0」公開 ― キャラの一貫性に強み", src:"ASCII×AI", summary:"キャラ一貫性に強い画像生成。", img:"https://ascii.jp/img/2026/05/25/4471461/s/f52eebeb53e05b37.jpg", score:80, why:"キャラ一貫性。AIヒューマン制作に有用", url:"https://ascii.jp/elem/000/004/404/4404597/"},
+  {date:"2026-05-20", cat:"video", title:"Google「Gemini Omni」シリーズ発表 ― 動画版「Nano Banana」がついに登場", src:"ASCII×AI", summary:"動画生成の新潮流。", img:"https://ascii.jp/img/2026/05/20/4469029/s/ee23873804df7a3c.jpg", score:84, why:"動画生成の新潮流", url:"https://ascii.jp/elem/000/004/403/4403465/"},
+  {date:"2026-05-15", cat:"video", title:"動画生成AIの「Runway」が日本進出 ― 東京オフィス開設、約62億円を初期投資", src:"ASCII×AI", summary:"主要AI動画ツールの日本本格展開。", img:"https://ascii.jp/img/2026/05/15/4467006/s/511a62b29242e5cf.png", score:86, why:"主要AI動画ツールの日本本格展開", url:"https://ascii.jp/elem/000/004/402/4402511/"}
 ];
 // =========================== ARCHIVE_END ===========================
 
 const WD=["日","月","火","水","木","金","土"];
 const TODAY=new Date(2026,5,10); // 2026-06-10
-// --- security: escape scraped text for innerHTML, restrict URLs to http(s) ---
+// security: escape scraped text for innerHTML, restrict URLs to http(s)
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function safeUrl(u){u=String(u==null?"":u).trim();return /^https?:\/\//i.test(u)?u:"#";}
+function stars(s){s=+s||0;return s>=85?"★★★":s>=70?"★★":"★";}
 
 document.querySelectorAll(".tab").forEach(t=>{
   t.onclick=()=>{
@@ -375,11 +371,11 @@ document.querySelectorAll(".tab").forEach(t=>{
   };
 });
 
-const TYPE_LABEL={expo:"大型EXPO・展示会",conference:"カンファレンス",seminar:"セミナー・講座",meetup:"勉強会・交流会"};
+const TYPE_LABEL={contest:"コンテスト・大会",expo:"大型EXPO・展示会",conference:"カンファレンス",seminar:"セミナー・講座",meetup:"勉強会・交流会"};
 const FMT_LABEL={onsite:"現地",hybrid:"ハイブリッド",online:"オンライン"};
 const THEME_LABEL={video:"動画・映像",image:"画像・デザイン",marketing:"マーケ・SNS",tools:"ツール・エージェント",business:"ビジネス活用"};
 const cstate={year:2026,month:5,q:"",sort:"asc",
-  types:new Set(["expo","conference","seminar","meetup"]),
+  types:new Set(["contest","expo","conference","seminar","meetup"]),
   fmts:new Set(["onsite","hybrid","online"]),
   themes:new Set(["video","image","marketing","tools","business"])};
 function parse(d){const[a,b,c]=d.split("-").map(Number);return new Date(a,b-1,c);}
@@ -391,11 +387,12 @@ function isThisWeek(ev){const s=parse(ev.start);const diff=(s-TODAY)/86400000;re
 function deadlineInfo(ev){
   if(!ev.deadline)return{txt:"申込: 公式ページで確認",cls:"dl-open"};
   const dl=parse(ev.deadline);const days=Math.ceil((dl-TODAY)/86400000);const md=`${dl.getMonth()+1}/${dl.getDate()}`;
-  if(days<0)return{txt:"申込締切（終了）",cls:"dl-ended"};
-  if(days===0)return{txt:"🔥 本日締切",cls:"dl-urgent"};
-  if(days<=3)return{txt:`🔥 締切間近 あと${days}日（${md}まで）`,cls:"dl-urgent"};
-  if(days<=7)return{txt:`⏰ 締切まで${days}日（${md}まで）`,cls:"dl-soon"};
-  return{txt:`申込締切 ${md}`,cls:"dl-normal"};
+  const label=ev.type==="contest"?"応募締切":"申込締切";
+  if(days<0)return{txt:label+"（終了）",cls:"dl-ended"};
+  if(days===0)return{txt:"🔥 本日"+label,cls:"dl-urgent"};
+  if(days<=3)return{txt:`🔥 ${label}間近 あと${days}日（${md}まで）`,cls:"dl-urgent"};
+  if(days<=7)return{txt:`⏰ ${label}まで${days}日（${md}まで）`,cls:"dl-soon"};
+  return{txt:`${label} ${md}`,cls:"dl-normal"};
 }
 function renderCalendar(){
   document.getElementById("monthLabel").textContent=`${cstate.year}年 ${cstate.month+1}月`;
@@ -428,8 +425,9 @@ function renderAgenda(){
     const tags=ev.themes.map(t=>`<span class="tag">${esc(THEME_LABEL[t]||t)}</span>`).join("");
     const week=isThisWeek(ev)?'<span class="weekb">今週</span>':'';
     const d=deadlineInfo(ev);
+    const fit=ev.score?`<div class="fitrow"><span class="fit">★ AIMS適合 ${stars(ev.score)}</span><span class="why">${esc(ev.why||"")}</span></div>`:"";
     a.innerHTML=`<div class="ethumb ${esc(ev.type)}">${img}<span class="edate">${esc(evDateStr(ev))}</span></div>
-      <div class="rbody"><div class="rtitle">${esc(ev.title)}${week}</div><div class="dlbar ${d.cls}">${esc(d.txt)}</div>
+      <div class="rbody"><div class="rtitle">${esc(ev.title)}${week}</div>${fit}<div class="dlbar ${d.cls}">${esc(d.txt)}</div>
       <div class="meta"><span class="badge ${esc(ev.type)}">${esc(TYPE_LABEL[ev.type]||ev.type)}</span><span class="fmt ${esc(ev.format)}">${esc(FMT_LABEL[ev.format]||ev.format)}</span>
       <span>🕘 ${esc(ev.time)}</span><span>📍 ${esc(ev.venue)}（${esc(ev.area)}）</span><span>💴 ${esc(ev.fee)}</span><span>🏢 ${esc(ev.org)}</span></div>
       <div class="tags">${tags}</div></div>`;
@@ -451,14 +449,16 @@ function isNew(d){const p=d.split("-");if(p.length<3)return false;const dt=new D
 function ndate(d){const p=d.split("-");return p.length>=2?new Date(+p[0],+p[1]-1,+(p[2]||1)):new Date(+p[0],0,1);}
 function newsCard(n,hero){
   const img=n.img?`<img src="${esc(safeUrl(n.img))}" loading="lazy" alt="" onerror="this.remove()">`:"";
-  const meta=`<div class="ntop"><span class="cat ${esc(n.cat)}">${esc(CAT_LABEL[n.cat]||n.cat)}</span><span class="src">🏷 ${esc(n.src)}</span>
+  const fit=n.score?`<span class="fit">★ AIMS適合 ${stars(n.score)}</span>`:"";
+  const meta=`<div class="ntop"><span class="cat ${esc(n.cat)}">${esc(CAT_LABEL[n.cat]||n.cat)}</span>${fit}<span class="src">🏷 ${esc(n.src)}</span>
       <span class="ndate">${esc(fmtDate(n.date))}</span>${isNew(n.date)?'<span class="newb">NEW</span>':''}</div>`;
+  const why=n.why?`<div class="fitrow"><span class="why">${esc(n.why)}</span></div>`:"";
   if(hero){const a=document.createElement("a");a.className="hero "+esc(n.cat);a.href=safeUrl(n.url);a.target="_blank";a.rel="noopener";
     a.innerHTML=`<div class="hthumb"><span class="feat">注目</span>${img}</div>
-      <div class="hbody">${meta}<div class="htitle">${esc(n.title)}</div><p>${esc(n.summary)}</p><span class="more">記事を読む →</span></div>`;
+      <div class="hbody">${meta}<div class="htitle">${esc(n.title)}</div><p>${esc(n.summary)}</p>${why}<span class="more">記事を読む →</span></div>`;
     return a;}
   const a=document.createElement("a");a.className="item "+esc(n.cat);a.href=safeUrl(n.url);a.target="_blank";a.rel="noopener";
-  a.innerHTML=`<div class="thumb">${img}</div><div class="ibody">${meta}<h3>${esc(n.title)}</h3><p>${esc(n.summary)}</p></div>`;
+  a.innerHTML=`<div class="thumb">${img}</div><div class="ibody">${meta}<h3>${esc(n.title)}</h3><p>${esc(n.summary)}</p>${why}</div>`;
   return a;
 }
 const nstate={q:"",sort:"desc",cats:new Set(["model","video","image","industry","creative"])};
@@ -502,7 +502,7 @@ bind(".fitem[data-theme]",cstate.themes,"theme",renderCal);
 bind(".fitem[data-c]",nstate.cats,"c",renderNews);
 bind(".fitem[data-ac]",astate.cats,"ac",renderArchive);
 
-const ALL={k:{set:cstate.types,attr:"k",all:["expo","conference","seminar","meetup"],cb:renderCal},
+const ALL={k:{set:cstate.types,attr:"k",all:["contest","expo","conference","seminar","meetup"],cb:renderCal},
            fmt:{set:cstate.fmts,attr:"fmt",all:["onsite","hybrid","online"],cb:renderCal},
            theme:{set:cstate.themes,attr:"theme",all:["video","image","marketing","tools","business"],cb:renderCal},
            c:{set:nstate.cats,attr:"c",all:["model","video","image","industry","creative"],cb:renderNews},
