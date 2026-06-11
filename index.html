@@ -360,6 +360,9 @@ const ARCHIVE = [
 
 const WD=["日","月","火","水","木","金","土"];
 const TODAY=new Date(2026,5,10); // 2026-06-10
+// --- security: escape scraped text for innerHTML, restrict URLs to http(s) ---
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function safeUrl(u){u=String(u==null?"":u).trim();return /^https?:\/\//i.test(u)?u:"#";}
 
 document.querySelectorAll(".tab").forEach(t=>{
   t.onclick=()=>{
@@ -407,7 +410,7 @@ function renderCalendar(){
     if(sameDay(date,TODAY))cell.classList.add("today");
     const num=document.createElement("div");num.className="num";num.textContent=dn;cell.appendChild(num);
     EVENTS.filter(passC).filter(ev=>inRange(ev,date)).forEach(ev=>{
-      const a=document.createElement("a");a.className="ev "+ev.type;a.href=ev.url;a.target="_blank";a.rel="noopener";
+      const a=document.createElement("a");a.className="ev "+ev.type;a.href=safeUrl(ev.url);a.target="_blank";a.rel="noopener";
       a.textContent=ev.title;a.title=ev.title+" / "+ev.venue;cell.appendChild(a);});
     grid.appendChild(cell);
   }
@@ -420,15 +423,15 @@ function renderAgenda(){
   const wrap=document.getElementById("agenda");wrap.innerHTML="";
   if(!list.length){wrap.innerHTML='<div class="empty">条件に合うイベントがありません。検索や絞り込みを調整してください。</div>';updateCount();return;}
   list.forEach(ev=>{
-    const a=document.createElement("a");a.className="row";a.href=ev.url;a.target="_blank";a.rel="noopener";
-    const img=ev.img?`<img src="${ev.img}" loading="lazy" alt="" onerror="this.remove()">`:"";
-    const tags=ev.themes.map(t=>`<span class="tag">${THEME_LABEL[t]}</span>`).join("");
+    const a=document.createElement("a");a.className="row";a.href=safeUrl(ev.url);a.target="_blank";a.rel="noopener";
+    const img=ev.img?`<img src="${esc(safeUrl(ev.img))}" loading="lazy" alt="" onerror="this.remove()">`:"";
+    const tags=ev.themes.map(t=>`<span class="tag">${esc(THEME_LABEL[t]||t)}</span>`).join("");
     const week=isThisWeek(ev)?'<span class="weekb">今週</span>':'';
     const d=deadlineInfo(ev);
-    a.innerHTML=`<div class="ethumb ${ev.type}">${img}<span class="edate">${evDateStr(ev)}</span></div>
-      <div class="rbody"><div class="rtitle">${ev.title}${week}</div><div class="dlbar ${d.cls}">${d.txt}</div>
-      <div class="meta"><span class="badge ${ev.type}">${TYPE_LABEL[ev.type]}</span><span class="fmt ${ev.format}">${FMT_LABEL[ev.format]}</span>
-      <span>🕘 ${ev.time}</span><span>📍 ${ev.venue}（${ev.area}）</span><span>💴 ${ev.fee}</span><span>🏢 ${ev.org}</span></div>
+    a.innerHTML=`<div class="ethumb ${esc(ev.type)}">${img}<span class="edate">${esc(evDateStr(ev))}</span></div>
+      <div class="rbody"><div class="rtitle">${esc(ev.title)}${week}</div><div class="dlbar ${d.cls}">${esc(d.txt)}</div>
+      <div class="meta"><span class="badge ${esc(ev.type)}">${esc(TYPE_LABEL[ev.type]||ev.type)}</span><span class="fmt ${esc(ev.format)}">${esc(FMT_LABEL[ev.format]||ev.format)}</span>
+      <span>🕘 ${esc(ev.time)}</span><span>📍 ${esc(ev.venue)}（${esc(ev.area)}）</span><span>💴 ${esc(ev.fee)}</span><span>🏢 ${esc(ev.org)}</span></div>
       <div class="tags">${tags}</div></div>`;
     wrap.appendChild(a);
   });
@@ -447,15 +450,15 @@ function fmtDate(d){const p=d.split("-");return p.length===3?`${p[0]}.${p[1]}.${
 function isNew(d){const p=d.split("-");if(p.length<3)return false;const dt=new Date(+p[0],+p[1]-1,+p[2]);const diff=(TODAY-dt)/86400000;return diff>=0&&diff<=3;}
 function ndate(d){const p=d.split("-");return p.length>=2?new Date(+p[0],+p[1]-1,+(p[2]||1)):new Date(+p[0],0,1);}
 function newsCard(n,hero){
-  const img=n.img?`<img src="${n.img}" loading="lazy" alt="" onerror="this.remove()">`:"";
-  const meta=`<div class="ntop"><span class="cat ${n.cat}">${CAT_LABEL[n.cat]}</span><span class="src">🏷 ${n.src}</span>
-      <span class="ndate">${fmtDate(n.date)}</span>${isNew(n.date)?'<span class="newb">NEW</span>':''}</div>`;
-  if(hero){const a=document.createElement("a");a.className="hero "+n.cat;a.href=n.url;a.target="_blank";a.rel="noopener";
+  const img=n.img?`<img src="${esc(safeUrl(n.img))}" loading="lazy" alt="" onerror="this.remove()">`:"";
+  const meta=`<div class="ntop"><span class="cat ${esc(n.cat)}">${esc(CAT_LABEL[n.cat]||n.cat)}</span><span class="src">🏷 ${esc(n.src)}</span>
+      <span class="ndate">${esc(fmtDate(n.date))}</span>${isNew(n.date)?'<span class="newb">NEW</span>':''}</div>`;
+  if(hero){const a=document.createElement("a");a.className="hero "+esc(n.cat);a.href=safeUrl(n.url);a.target="_blank";a.rel="noopener";
     a.innerHTML=`<div class="hthumb"><span class="feat">注目</span>${img}</div>
-      <div class="hbody">${meta}<div class="htitle">${n.title}</div><p>${n.summary}</p><span class="more">記事を読む →</span></div>`;
+      <div class="hbody">${meta}<div class="htitle">${esc(n.title)}</div><p>${esc(n.summary)}</p><span class="more">記事を読む →</span></div>`;
     return a;}
-  const a=document.createElement("a");a.className="item "+n.cat;a.href=n.url;a.target="_blank";a.rel="noopener";
-  a.innerHTML=`<div class="thumb">${img}</div><div class="ibody">${meta}<h3>${n.title}</h3><p>${n.summary}</p></div>`;
+  const a=document.createElement("a");a.className="item "+esc(n.cat);a.href=safeUrl(n.url);a.target="_blank";a.rel="noopener";
+  a.innerHTML=`<div class="thumb">${img}</div><div class="ibody">${meta}<h3>${esc(n.title)}</h3><p>${esc(n.summary)}</p></div>`;
   return a;
 }
 const nstate={q:"",sort:"desc",cats:new Set(["model","video","image","industry","creative"])};
