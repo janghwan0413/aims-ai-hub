@@ -174,6 +174,7 @@
   .cat.image{background:var(--meetup-bg);color:#e29bf5;} .cat.industry{background:var(--seminar-bg);color:#74dd86;}
   .cat.creative{background:#332a0e;color:#ffe066;}
   .src{font-size:12px;color:var(--muted);} .ndate{font-size:12px;color:var(--muted);margin-left:auto;}
+  .rtime{font-size:11.5px;color:#9aa3b2;background:#20242d;border:1px solid var(--line);border-radius:5px;padding:1px 7px;}
   .newb{font-size:10px;font-weight:800;color:#0e1014;background:#ffd43b;padding:1px 7px;border-radius:5px;}
   .item h3{font-size:16px;margin:2px 0 6px;line-height:1.4;color:var(--ink);transition:.12s;}
   .item p{margin:0 0 6px;font-size:13.5px;color:#c4cbd8;}
@@ -396,23 +397,23 @@ const EVENTS = [
 
 // =========================== NEWS_START ===========================
 const NEWS = [
-  {date:"2026-06-06", cat:"video", title:"ElevenLabs、AI吹替モデル「Dubbing v2」提供開始 ― 話者の感情やトーンを再現、90以上の言語に対応", src:"Ledge.ai", summary:"AIヒューマンの多言語化に直結。話者の感情・トーンを保ったまま吹き替えが可能に。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12.jpg", score:88, why:"AIヒューマンの声・多言語展開に直結", url:"https://ledge.ai/articles/dubbing_v2_elevenlabs_ai_dubbing"},
-  {date:"2026-06-01", cat:"creative", title:"生成AIの「おべっか」を抑え、本音アドバイザーにするプロンプト術", src:"ASCII×AI（柳谷智宣）", summary:"AIの過剰な肯定を避け、厳しい意見を引き出すプロンプトの使い分けを実践的に解説。", img:"https://ascii.jp/img/2026/05/22/4470296/s/c2a33a9656e0bd24.jpg", score:66, why:"制作で効くプロンプトの実践Tips", url:"https://ascii.jp/elem/000/004/404/4404185/"},
-  {date:"2026-05-28", cat:"creative", title:"米Amazon、AI生成アニメをPrime Videoで配信へ ― 「GenAI Creators' Fund」で3作品", src:"ASCII×AI", summary:"AI生成作品が配信レベルへ。映像クリエイティブのAI活用が一段と前進。", img:"https://ascii.jp/img/2026/05/28/4473840/s/cd22b1f6c457cad1.png", score:78, why:"AI映像が配信レベルへ。制作・企画の事例として有用", url:"https://ascii.jp/elem/000/004/406/4406008/"},
-  {date:"2026-05-25", cat:"image", title:"アニメ特化のローカル画像生成AI「Anima Base v1.0」公開 ― キャラの一貫性に強み", src:"ASCII×AI", summary:"キャラクター一貫性に強い画像生成。AIヒューマン／キャラ制作に有用。", img:"https://ascii.jp/img/2026/05/25/4471461/s/f52eebeb53e05b37.jpg", score:80, why:"キャラ一貫性。AIヒューマン制作に直接活きる", url:"https://ascii.jp/elem/000/004/404/4404597/"},
-  {date:"2026-05-20", cat:"video", title:"Google「Gemini Omni」シリーズ発表 ― 動画版「Nano Banana」がついに登場", src:"ASCII×AI", summary:"動画生成の新潮流。制作の選択肢が拡大。", img:"https://ascii.jp/img/2026/05/20/4469029/s/ee23873804df7a3c.jpg", score:84, why:"動画生成の新潮流。制作ツールの選択肢拡大", url:"https://ascii.jp/elem/000/004/403/4403465/"},
-  {date:"2026-05-15", cat:"video", title:"動画生成AIの「Runway」が日本進出 ― 東京オフィス開設、約62億円を初期投資", src:"ASCII×AI", summary:"AI動画制作の主要ツールが日本本格展開。", img:"https://ascii.jp/img/2026/05/15/4467006/s/511a62b29242e5cf.png", score:86, why:"主要AI動画ツールの日本本格展開", url:"https://ascii.jp/elem/000/004/402/4402511/"}
+  {date:"2026-06-06", cat:"video", title:"ElevenLabs、AI吹替モデル「Dubbing v2」提供開始 ― 話者の感情やトーンを再現、90以上の言語に対応", src:"Ledge.ai", summary:"AIヒューマンの多言語化に直結。話者の感情・トーンを保ったまま吹き替えが可能に。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12.jpg", score:88, why:"AIヒューマンの声・多言語展開に直結", readmin:3, url:"https://ledge.ai/articles/dubbing_v2_elevenlabs_ai_dubbing"},
+  {date:"2026-06-01", cat:"creative", title:"生成AIの「おべっか」を抑え、本音アドバイザーにするプロンプト術", src:"ASCII×AI（柳谷智宣）", summary:"AIの過剰な肯定を避け、厳しい意見を引き出すプロンプトの使い分けを実践的に解説。", img:"https://ascii.jp/img/2026/05/22/4470296/s/c2a33a9656e0bd24.jpg", score:66, why:"制作で効くプロンプトの実践Tips", readmin:5, url:"https://ascii.jp/elem/000/004/404/4404185/"},
+  {date:"2026-05-28", cat:"creative", title:"米Amazon、AI生成アニメをPrime Videoで配信へ ― 「GenAI Creators' Fund」で3作品", src:"ASCII×AI", summary:"AI生成作品が配信レベルへ。映像クリエイティブのAI活用が一段と前進。", img:"https://ascii.jp/img/2026/05/28/4473840/s/cd22b1f6c457cad1.png", score:78, why:"AI映像が配信レベルへ。制作・企画の事例として有用", readmin:4, url:"https://ascii.jp/elem/000/004/406/4406008/"},
+  {date:"2026-05-25", cat:"image", title:"アニメ特化のローカル画像生成AI「Anima Base v1.0」公開 ― キャラの一貫性に強み", src:"ASCII×AI", summary:"キャラクター一貫性に強い画像生成。AIヒューマン／キャラ制作に有用。", img:"https://ascii.jp/img/2026/05/25/4471461/s/f52eebeb53e05b37.jpg", score:80, why:"キャラ一貫性。AIヒューマン制作に直接活きる", readmin:4, url:"https://ascii.jp/elem/000/004/404/4404597/"},
+  {date:"2026-05-20", cat:"video", title:"Google「Gemini Omni」シリーズ発表 ― 動画版「Nano Banana」がついに登場", src:"ASCII×AI", summary:"動画生成の新潮流。制作の選択肢が拡大。", img:"https://ascii.jp/img/2026/05/20/4469029/s/ee23873804df7a3c.jpg", score:84, why:"動画生成の新潮流。制作ツールの選択肢拡大", readmin:4, url:"https://ascii.jp/elem/000/004/403/4403465/"},
+  {date:"2026-05-15", cat:"video", title:"動画生成AIの「Runway」が日本進出 ― 東京オフィス開設、約62億円を初期投資", src:"ASCII×AI", summary:"AI動画制作の主要ツールが日本本格展開。", img:"https://ascii.jp/img/2026/05/15/4467006/s/511a62b29242e5cf.png", score:86, why:"主要AI動画ツールの日本本格展開", readmin:3, url:"https://ascii.jp/elem/000/004/402/4402511/"}
 ];
 // =========================== NEWS_END ===========================
 
 // =========================== ARCHIVE_START ===========================
 const ARCHIVE = [
-  {date:"2026-06-06", cat:"video", title:"ElevenLabs、AI吹替モデル「Dubbing v2」提供開始 ― 話者の感情やトーンを再現、90以上の言語に対応", src:"Ledge.ai", summary:"AIヒューマンの多言語化に直結。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12.jpg", score:88, why:"AIヒューマンの声・多言語展開に直結", url:"https://ledge.ai/articles/dubbing_v2_elevenlabs_ai_dubbing"},
-  {date:"2026-06-01", cat:"creative", title:"生成AIの「おべっか」を抑え、本音アドバイザーにするプロンプト術", src:"ASCII×AI（柳谷智宣）", summary:"プロンプトの使い分けを実践解説。", img:"https://ascii.jp/img/2026/05/22/4470296/s/c2a33a9656e0bd24.jpg", score:66, why:"制作で効くプロンプトの実践Tips", url:"https://ascii.jp/elem/000/004/404/4404185/"},
-  {date:"2026-05-28", cat:"creative", title:"米Amazon、AI生成アニメをPrime Videoで配信へ ― 「GenAI Creators' Fund」で3作品", src:"ASCII×AI", summary:"AI映像が配信レベルへ。", img:"https://ascii.jp/img/2026/05/28/4473840/s/cd22b1f6c457cad1.png", score:78, why:"AI映像が配信レベルへ。事例参考", url:"https://ascii.jp/elem/000/004/406/4406008/"},
-  {date:"2026-05-25", cat:"image", title:"アニメ特化のローカル画像生成AI「Anima Base v1.0」公開 ― キャラの一貫性に強み", src:"ASCII×AI", summary:"キャラ一貫性に強い画像生成。", img:"https://ascii.jp/img/2026/05/25/4471461/s/f52eebeb53e05b37.jpg", score:80, why:"キャラ一貫性。AIヒューマン制作に有用", url:"https://ascii.jp/elem/000/004/404/4404597/"},
-  {date:"2026-05-20", cat:"video", title:"Google「Gemini Omni」シリーズ発表 ― 動画版「Nano Banana」がついに登場", src:"ASCII×AI", summary:"動画生成の新潮流。", img:"https://ascii.jp/img/2026/05/20/4469029/s/ee23873804df7a3c.jpg", score:84, why:"動画生成の新潮流", url:"https://ascii.jp/elem/000/004/403/4403465/"},
-  {date:"2026-05-15", cat:"video", title:"動画生成AIの「Runway」が日本進出 ― 東京オフィス開設、約62億円を初期投資", src:"ASCII×AI", summary:"主要AI動画ツールの日本本格展開。", img:"https://ascii.jp/img/2026/05/15/4467006/s/511a62b29242e5cf.png", score:86, why:"主要AI動画ツールの日本本格展開", url:"https://ascii.jp/elem/000/004/402/4402511/"}
+  {date:"2026-06-06", cat:"video", title:"ElevenLabs、AI吹替モデル「Dubbing v2」提供開始 ― 話者の感情やトーンを再現、90以上の言語に対応", src:"Ledge.ai", summary:"AIヒューマンの多言語化に直結。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12.jpg", score:88, why:"AIヒューマンの声・多言語展開に直結", readmin:3, url:"https://ledge.ai/articles/dubbing_v2_elevenlabs_ai_dubbing"},
+  {date:"2026-06-01", cat:"creative", title:"生成AIの「おべっか」を抑え、本音アドバイザーにするプロンプト術", src:"ASCII×AI（柳谷智宣）", summary:"プロンプトの使い分けを実践解説。", img:"https://ascii.jp/img/2026/05/22/4470296/s/c2a33a9656e0bd24.jpg", score:66, why:"制作で効くプロンプトの実践Tips", readmin:5, url:"https://ascii.jp/elem/000/004/404/4404185/"},
+  {date:"2026-05-28", cat:"creative", title:"米Amazon、AI生成アニメをPrime Videoで配信へ ― 「GenAI Creators' Fund」で3作品", src:"ASCII×AI", summary:"AI映像が配信レベルへ。", img:"https://ascii.jp/img/2026/05/28/4473840/s/cd22b1f6c457cad1.png", score:78, why:"AI映像が配信レベルへ。事例参考", readmin:4, url:"https://ascii.jp/elem/000/004/406/4406008/"},
+  {date:"2026-05-25", cat:"image", title:"アニメ特化のローカル画像生成AI「Anima Base v1.0」公開 ― キャラの一貫性に強み", src:"ASCII×AI", summary:"キャラ一貫性に強い画像生成。", img:"https://ascii.jp/img/2026/05/25/4471461/s/f52eebeb53e05b37.jpg", score:80, why:"キャラ一貫性。AIヒューマン制作に有用", readmin:4, url:"https://ascii.jp/elem/000/004/404/4404597/"},
+  {date:"2026-05-20", cat:"video", title:"Google「Gemini Omni」シリーズ発表 ― 動画版「Nano Banana」がついに登場", src:"ASCII×AI", summary:"動画生成の新潮流。", img:"https://ascii.jp/img/2026/05/20/4469029/s/ee23873804df7a3c.jpg", score:84, why:"動画生成の新潮流", readmin:4, url:"https://ascii.jp/elem/000/004/403/4403465/"},
+  {date:"2026-05-15", cat:"video", title:"動画生成AIの「Runway」が日本進出 ― 東京オフィス開設、約62億円を初期投資", src:"ASCII×AI", summary:"主要AI動画ツールの日本本格展開。", img:"https://ascii.jp/img/2026/05/15/4467006/s/511a62b29242e5cf.png", score:86, why:"主要AI動画ツールの日本本格展開", readmin:3, url:"https://ascii.jp/elem/000/004/402/4402511/"}
 ];
 // =========================== ARCHIVE_END ===========================
 
@@ -496,7 +497,7 @@ function openDetail(it,kind){
       <a class="dcta" href="${esc(safeUrl(it.url))}" target="_blank" rel="noopener">公式ページを開く →</a>
       <div class="dhint">※ 申込・最新情報は公式ページでご確認ください。</div>`;
   }else{
-    body=`<div class="ntop"><span class="cat ${esc(it.cat)}">${esc(CAT_LABEL[it.cat]||it.cat)}</span>${it.score?`<span class="fit">★ AIMS適合 ${stars(it.score)}</span>`:""}<span class="src">🏷 ${esc(it.src)}</span><span class="ndate">${esc(fmtDate(it.date))}</span></div>
+    body=`<div class="ntop"><span class="cat ${esc(it.cat)}">${esc(CAT_LABEL[it.cat]||it.cat)}</span>${it.score?`<span class="fit">★ AIMS適合 ${stars(it.score)}</span>`:""}<span class="src">🏷 ${esc(it.src)}</span>${it.readmin?`<span class="rtime">🕐 約${(+it.readmin)||1}分</span>`:""}<span class="ndate">${esc(fmtDate(it.date))}</span></div>
       <h2 class="dtitle">${esc(it.title)}</h2>
       <p class="dsum">${esc(it.summary)}</p>
       ${it.why?`<div class="dfit"><span class="why">💡 ${esc(it.why)}</span></div>`:""}
@@ -565,7 +566,7 @@ document.querySelectorAll("#sortcal button").forEach(b=>b.onclick=()=>{
 function newsCard(n,hero){
   const img=n.img?`<img src="${esc(safeUrl(n.img))}" loading="lazy" alt="" onerror="this.remove()">`:"";
   const fit=n.score?`<span class="fit">★ AIMS適合 ${stars(n.score)}</span>`:"";
-  const meta=`<div class="ntop"><span class="cat ${esc(n.cat)}">${esc(CAT_LABEL[n.cat]||n.cat)}</span>${fit}<span class="src">🏷 ${esc(n.src)}</span>
+  const meta=`<div class="ntop"><span class="cat ${esc(n.cat)}">${esc(CAT_LABEL[n.cat]||n.cat)}</span>${fit}<span class="src">🏷 ${esc(n.src)}</span>${n.readmin?`<span class="rtime">🕐 約${(+n.readmin)||1}分</span>`:""}
       <span class="ndate">${esc(fmtDate(n.date))}</span>${isNew(n.date)?'<span class="newb">NEW</span>':''}</div>`;
   const why=n.why?`<div class="fitrow"><span class="why">💡 ${esc(n.why)}</span></div>`:"";
   if(hero){const a=document.createElement("a");a.className="hero "+esc(n.cat);a.href=safeUrl(n.url);a.target="_blank";a.rel="noopener";
