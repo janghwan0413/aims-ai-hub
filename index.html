@@ -196,18 +196,23 @@
   .dclose:hover{background:#222633;border-color:var(--brand);}
   .dhero{height:200px;background:#0e1014;position:relative;overflow:hidden;border-bottom:1px solid var(--line);}
   .dhero img{width:100%;height:100%;object-fit:cover;display:block;}
-  .dbody{padding:18px 22px 30px;}
-  .dtitle{font-size:20px;font-weight:800;line-height:1.42;margin:10px 0 10px;}
+  .dbody{padding:18px 22px 34px;}
+  .dtitle{font-size:21px;font-weight:800;line-height:1.42;margin:10px 0 12px;}
   .dfit{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 12px;}
-  .dtable{width:100%;border-collapse:collapse;margin:6px 0 18px;font-size:13.5px;}
+  .dtable{width:100%;border-collapse:collapse;margin:6px 0 20px;font-size:13.5px;}
   .dtable th{text-align:left;color:var(--muted);font-weight:600;width:62px;padding:8px 10px 8px 0;vertical-align:top;border-bottom:1px solid var(--line);white-space:nowrap;}
   .dtable td{padding:8px 0;border-bottom:1px solid var(--line);color:var(--ink);}
-  .ddesc{margin:2px 0 18px;}
-  .ddesc h3{font-size:13px;color:var(--lime);font-weight:800;margin:0 0 9px;letter-spacing:.04em;}
-  .ddesc p{font-size:13.5px;color:#cdd4e1;line-height:1.9;margin:0 0 11px;}
-  .ddesc p:last-child{margin-bottom:0;}
-  .dsum{font-size:14px;color:#c4cbd8;line-height:1.75;margin:0 0 14px;}
-  .dcta{display:inline-block;margin-top:4px;background:var(--lime);color:#0d1407;font-weight:800;text-decoration:none;padding:11px 20px;border-radius:10px;}
+  .dsum{font-size:14px;color:#c4cbd8;line-height:1.78;margin:0 0 16px;}
+  /* sectioned detail */
+  .dsec{margin:0 0 18px;}
+  .dsec-h{font-size:15px;font-weight:800;color:var(--ink);margin:0 0 9px;padding:7px 0 7px 12px;
+    border-left:3px solid var(--lime);background:linear-gradient(90deg,rgba(211,248,75,.10),rgba(211,248,75,0));border-radius:0 6px 6px 0;line-height:1.35;}
+  .dsec>p{font-size:14px;color:#d3d9e4;line-height:1.95;margin:0;padding:0 2px;}
+  .dul{margin:0;padding:0 2px;list-style:none;}
+  .dul li{font-size:14px;color:#d3d9e4;line-height:1.7;margin:0 0 8px;padding-left:20px;position:relative;}
+  .dul li:before{content:"›";position:absolute;left:5px;top:-1px;color:var(--lime);font-weight:900;font-size:15px;}
+  .dul li:last-child{margin-bottom:0;}
+  .dcta{display:inline-block;margin-top:8px;background:var(--lime);color:#0d1407;font-weight:800;text-decoration:none;padding:12px 22px;border-radius:10px;font-size:14.5px;}
   .dcta:hover{filter:brightness(1.06);}
   .dhint{font-size:11.5px;color:var(--muted);margin-top:12px;}
 
@@ -357,13 +362,35 @@
 <script>
 // =========================== EVENTS_START ===========================
 // type:contest|expo|conference|seminar|meetup / format:onsite|hybrid|online
-// themes:[video|image|marketing|tools|business] / img?, deadline?, score, why, desc:[段落...]
+// themes:[...] / img?, deadline?, score, why / desc:[{h:見出し, b:本文 or 箇条書き配列}]
 const EVENTS = [
-  {start:"2026-06-17", title:"【アマナ A3】AIは“企画”を民主化したのか？〜プランナーゆる議論〜", type:"seminar", format:"online", time:"12:00–12:50", area:"オンライン", venue:"オンライン", org:"アマナ（A3）", fee:"無料", themes:["marketing","business","tools"], deadline:"2026-06-16", score:92, why:"amanaグループのAIクリエイティブ／企画。AIMSの自社領域ど真ん中", url:"https://insights.amana.jp/event/51597/", desc:["アマナのAIクリエイティブ・チーム「A3」が、生成AIによって“企画”という仕事がどこまで民主化されたのかを、現場のプランナー目線でゆるく語り合うお昼のオンラインウェビナー（約50分・無料）です。","得られること：AIを使った企画出し・アイデア発想の実例と考え方、ツールに振り回されずにアイデアを形にする視点。企画・ディレクション・制作の引き出しが増えます。","活用アイデア：自社IPのリール／フィードの企画フローや、受注案件の提案前ブレストにそのまま応用できます。気軽な雰囲気なので、ランチ枠で複数人が視聴して感想をシェアするのに向いています。締切は前日6/16なので早めの申込を。"]},
-  {start:"2026-08-27", title:"AI博覧会 Summer 2026", type:"expo", format:"onsite", time:"10:00–18:00", area:"新宿区", venue:"新宿住友ビル 三角広場", org:"アイスマイリー", fee:"入場無料（登録制）", themes:["business","marketing","image"], score:74, why:"AI総合EXPO。映像・アバター系の出展やデモを実機で確認できる", url:"https://aismiley.co.jp/ai_hakurankai/", desc:["生成AIの総合展示イベント。映像・画像・アバター・自動化など、各社の最新ソリューションを一日で一望できる入場無料の展示会です（新宿・要事前登録）。","得られること：実機デモで“今すぐ使えるレベル”を体感、出展企業に直接相談、導入事例の収集。","活用アイデア：AIヒューマン／アバター系や動画生成まわりの出展を重点的にチェックし、制作や受注広告に使えるツール・外部パートナーを探す“偵察”に最適。半日でも十分に回れます。"]},
-  {start:"2026-08-31", title:"Sparknify Human vs. AI Film Festival 2026（作品応募）", type:"contest", format:"online", time:"応募締切", area:"世界（オンライン応募）", venue:"オンライン応募", org:"Sparknify", fee:"早期応募は無料", themes:["video","image"], deadline:"2026-08-31", score:85, why:"応募できる世界のAI映像コンテスト。AI生成部門あり＝自社制作で1本出せる", url:"https://filmfreeway.com/humanvsai", desc:["世界規模のAI短編映画祭です。テーマは「人間 vs AI」。最大の特徴は、ジャンルではなく“観客が見終わったあとに抱く感情”で審査される点。7つの感情（喜び／怒り／悲しみ／満足／愛／嫌悪／欲望）から1つを選び、その感情を最も強く呼び起こす作品を競います。","応募部門は2つ：①人間制作（生成AIの使用は禁止）、②AI生成。私たちが出すのは②で、普段のAI制作ワークフローのままでOKです。作品の長さは1〜30分（クレジット込み）。","費用と締切：早期エントリーなら応募は無料。締切は2026年8月31日。提出は映画祭プラットフォーム「FilmFreeway」から行います。なお、同じ作品を別の感情部門にも再応募でき、それぞれ別々に審査されます。","賞と本番：最高賞は「Humanity Award」＝賞金 US$3,000（各感情部門の受賞作の中から選出）。ノミネート作品は2026年9月26日、サンフランシスコのDelancey Street Screening Roomで上映され、授賞式・パネル討論・ネットワーキングが行われます。","制作の方向性（案）：自社AI IPを主役にした1〜数分のショートストーリーが有力。感情は世界観に合うもの（例：Love＝愛、Desire＝欲望）を1つに絞ると審査軸が明確になります。脚本は“何が起きるか”よりも“観客に何を残すか”を起点に設計するのがコツ。早期＝無料なので、まずFilmFreewayで登録だけ済ませ、締切から逆算して制作を進めるのが安全です。","意義：AI生成映像が国際映画祭で正面から評価される場であり、受賞すれば実績・海外露出につながります。AIヒューマン×ストーリーテリングの対外発信としても効果的です。"]},
-  {start:"2026-09-03", end:"2026-09-04", title:"AI Commerce EXPO / SNS運用戦略Expo 2026", type:"expo", format:"onsite", time:"10:00–18:00", area:"港区・浜松町", venue:"東京都立産業貿易センター浜松町館 5F", org:"ナノオプト・メディア", fee:"入場無料（登録制）", themes:["marketing","video","business"], score:90, why:"生成AI×SNS・動画・ブランドクリエイティブのハンズオン多数", url:"https://f2ff.jp/event/commerce-sns", desc:["生成AI×SNS運用・動画・ブランドクリエイティブに特化した専門展示会＋ハンズオン／セミナー。EC、インフルエンサー、ショート動画まわりの出展が集まる入場無料のイベントです（浜松町・要登録）。","得られること：SNS運用や映像制作を効率化・自動化するAIツールの実機体験、最新の活用事例、出展企業との商談。","活用アイデア：リール／フィード制作のワークフロー改善、受注広告の提案ネタ集め、AIヒューマン×SNSの最新トレンド把握に直結します。2日間あるので、複数人で手分けして回ると効率的です。"]},
-  {start:"2026-10-05", end:"2026-10-07", title:"生成AIサミット（GenAI/SUM）2026", type:"conference", format:"onsite", time:"終日", area:"千代田区・九段下", venue:"九段会館テラス", org:"日本経済新聞社", fee:"要確認", themes:["business"], score:62, why:"経営・業界トレンドの把握向け（制作直結は弱め・参考枠）", url:"https://www.xsum.jp/gai/", desc:["日経新聞社が主催する大型サミット。生成AIの経営・産業・制度面を、シンポジウム・ワークショップ・ピッチなどで扱います。","得られること：業界全体の動向、企業導入の潮流、政策・ルールの最新情報。制作現場のノウハウよりも“経営・事業の視点”が中心です。","活用アイデア：事業・経営目線でのトレンド把握用。制作への直結度は低めなので、興味のある人が情報収集として参加する“参考枠”の位置づけです。"]}
+  {start:"2026-06-17", title:"【アマナ A3】AIは“企画”を民主化したのか？〜プランナーゆる議論〜", type:"seminar", format:"online", time:"12:00–12:50", area:"オンライン", venue:"オンライン", org:"アマナ（A3）", fee:"無料", themes:["marketing","business","tools"], deadline:"2026-06-16", score:92, why:"amanaグループのAIクリエイティブ／企画。AIMSの自社領域ど真ん中", url:"https://insights.amana.jp/event/51597/", desc:[
+    {h:"どんなイベント？", b:"アマナのAIクリエイティブ・チーム「A3」が、生成AIで“企画”の仕事がどこまで変わったかを、現場プランナー目線でゆるく語り合うお昼のオンラインウェビナー（約50分・無料）。"},
+    {h:"得られること", b:["AIを使った企画出し・アイデア発想の実例と考え方","ツールに振り回されず、アイデアを形にする視点","企画・ディレクション・制作の引き出しが増える"]},
+    {h:"AIMSでの活用アイデア", b:"自社IPのリール／フィードの企画フローや、受注案件の提案前ブレストにそのまま応用できる。気軽な雰囲気なので、お昼に複数人で視聴→感想シェアがおすすめ（申込締切は前日6/16）。"}
+  ]},
+  {start:"2026-08-27", title:"AI博覧会 Summer 2026", type:"expo", format:"onsite", time:"10:00–18:00", area:"新宿区", venue:"新宿住友ビル 三角広場", org:"アイスマイリー", fee:"入場無料（登録制）", themes:["business","marketing","image"], score:74, why:"AI総合EXPO。映像・アバター系の出展やデモを実機で確認できる", url:"https://aismiley.co.jp/ai_hakurankai/", desc:[
+    {h:"どんなイベント？", b:"生成AIの総合展示イベント。映像・画像・アバター・自動化など各社の最新ソリューションを一日で一望できる入場無料の展示会（新宿・要登録）。"},
+    {h:"得られること", b:["実機デモで“今すぐ使えるレベル”を体感","出展企業に直接相談できる","導入事例をまとめて収集"]},
+    {h:"AIMSでの活用アイデア", b:"AIヒューマン／アバター系や動画生成まわりの出展を重点チェックし、制作や受注広告に使えるツール・外部パートナーを探す“偵察”に最適。半日でも十分回れる。"}
+  ]},
+  {start:"2026-08-31", title:"Sparknify Human vs. AI Film Festival 2026（作品応募）", type:"contest", format:"online", time:"応募締切", area:"世界（オンライン応募）", venue:"オンライン応募", org:"Sparknify", fee:"早期応募は無料", themes:["video","image"], deadline:"2026-08-31", score:85, why:"応募できる世界のAI映像コンテスト。AI生成部門あり＝自社制作で1本出せる", url:"https://filmfreeway.com/humanvsai", desc:[
+    {h:"どんなコンテスト？", b:"世界規模のAI短編映画祭。テーマは「人間 vs AI」。ジャンルではなく“観客が見終わったあとに抱く感情”で審査されるのが最大の特徴。7つの感情（喜び／怒り／悲しみ／満足／愛／嫌悪／欲望）から1つを選んで競う。"},
+    {h:"応募部門・尺", b:["AI生成部門で応募（普段のAI制作ワークフローのままでOK）","もう一方は人間制作部門（生成AIの使用は禁止）","作品の長さ：1〜30分（クレジット込み）"]},
+    {h:"締切・費用・応募方法", b:["締切：2026年8月31日","早期エントリーなら応募は無料","提出：映画祭プラットフォーム「FilmFreeway」から","同じ作品を別の感情部門にも再応募できる（別々に審査）"]},
+    {h:"賞・本番", b:["最高賞「Humanity Award」＝賞金 US$3,000","各感情部門の受賞作の中から選出","2026年9月26日、サンフランシスコで上映＋授賞式・パネル討論・ネットワーキング"]},
+    {h:"作品の方向性（案）", b:"自社AI IPを主役にした1〜数分のショートストーリーが有力。感情は世界観に合うもの（例：愛／欲望）を1つに絞ると審査軸が明確になる。脚本は“何が起きるか”より“観客に何を残すか”を起点に設計。早期＝無料なので、まずFilmFreewayで登録だけ済ませ、締切から逆算して制作するのが安全。"}
+  ]},
+  {start:"2026-09-03", end:"2026-09-04", title:"AI Commerce EXPO / SNS運用戦略Expo 2026", type:"expo", format:"onsite", time:"10:00–18:00", area:"港区・浜松町", venue:"東京都立産業貿易センター浜松町館 5F", org:"ナノオプト・メディア", fee:"入場無料（登録制）", themes:["marketing","video","business"], score:90, why:"生成AI×SNS・動画・ブランドクリエイティブのハンズオン多数", url:"https://f2ff.jp/event/commerce-sns", desc:[
+    {h:"どんなイベント？", b:"生成AI×SNS運用・動画・ブランドクリエイティブに特化した専門展示会＋ハンズオン／セミナー。EC・インフルエンサー・ショート動画まわりの出展が集まる入場無料イベント（浜松町・要登録）。"},
+    {h:"得られること", b:["SNS運用・映像制作を効率化／自動化するAIツールの実機体験","最新の活用事例","出展企業との商談"]},
+    {h:"AIMSでの活用アイデア", b:"リール／フィード制作のワークフロー改善、受注広告の提案ネタ集め、AIヒューマン×SNSの最新トレンド把握に直結。2日間あるので複数人で手分けして回ると効率的。"}
+  ]},
+  {start:"2026-10-05", end:"2026-10-07", title:"生成AIサミット（GenAI/SUM）2026", type:"conference", format:"onsite", time:"終日", area:"千代田区・九段下", venue:"九段会館テラス", org:"日本経済新聞社", fee:"要確認", themes:["business"], score:62, why:"経営・業界トレンドの把握向け（制作直結は弱め・参考枠）", url:"https://www.xsum.jp/gai/", desc:[
+    {h:"どんなイベント？", b:"日経新聞社主催の大型サミット。生成AIの経営・産業・制度面を、シンポジウム・ワークショップ・ピッチなどで扱う。"},
+    {h:"得られること", b:["業界全体の動向","企業導入の潮流","政策・ルールの最新情報"]},
+    {h:"AIMSでの位置づけ", b:"制作現場のノウハウより“経営・事業の視点”が中心。制作への直結度は低めなので、興味のある人が情報収集として参加する“参考枠”。"}
+  ]}
 ];
 // =========================== EVENTS_END ===========================
 
@@ -437,6 +464,15 @@ function fmtDate(d){const p=d.split("-");return p.length===3?`${p[0]}.${p[1]}.${
 function isNew(d){const p=d.split("-");if(p.length<3)return false;const dt=new Date(+p[0],+p[1]-1,+p[2]);const diff=(TODAY-dt)/86400000;return diff>=0&&diff<=3;}
 function ndate(d){const p=d.split("-");return p.length>=2?new Date(+p[0],+p[1]-1,+(p[2]||1)):new Date(+p[0],0,1);}
 
+function renderSections(secs){
+  if(!secs||!secs.length)return"";
+  return secs.map(s=>{
+    let body;
+    if(Array.isArray(s.b)){body=`<ul class="dul">${s.b.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;}
+    else{body=`<p>${esc(s.b)}</p>`;}
+    return `<div class="dsec"><div class="dsec-h">${esc(s.h)}</div>${body}</div>`;
+  }).join("");
+}
 function openDetail(it,kind){
   const c=document.getElementById("dcontent");
   const heroImg=it.img?`<div class="dhero"><img src="${esc(safeUrl(it.img))}" alt="" onerror="this.parentNode.style.display='none'"></div>`:"";
@@ -444,7 +480,6 @@ function openDetail(it,kind){
   if(kind==="event"){
     const dl=deadlineInfo(it);
     const tags=(it.themes||[]).map(t=>`<span class="tag">${esc(THEME_LABEL[t]||t)}</span>`).join("");
-    const desc=(it.desc&&it.desc.length)?`<div class="ddesc"><h3>📝 概要・活用アイデア</h3>${it.desc.map(p=>`<p>${esc(p)}</p>`).join("")}</div>`:"";
     body=`<div class="ntop"><span class="badge ${esc(it.type)}">${esc(TYPE_LABEL[it.type]||it.type)}</span><span class="fmt ${esc(it.format)}">${esc(FMT_LABEL[it.format]||it.format)}</span></div>
       <h2 class="dtitle">${esc(it.title)}</h2>
       ${it.score?`<div class="dfit"><span class="fit">★ AIMS適合 ${stars(it.score)}</span><span class="why">${esc(it.why||"")}</span></div>`:""}
@@ -457,16 +492,15 @@ function openDetail(it,kind){
         <tr><th>料金</th><td>${esc(it.fee)}</td></tr>
         <tr><th>テーマ</th><td>${tags}</td></tr>
       </table>
-      ${desc}
+      ${renderSections(it.desc)}
       <a class="dcta" href="${esc(safeUrl(it.url))}" target="_blank" rel="noopener">公式ページを開く →</a>
       <div class="dhint">※ 申込・最新情報は公式ページでご確認ください。</div>`;
   }else{
-    const desc=(it.desc&&it.desc.length)?`<div class="ddesc"><h3>📝 ポイント</h3>${it.desc.map(p=>`<p>${esc(p)}</p>`).join("")}</div>`:"";
     body=`<div class="ntop"><span class="cat ${esc(it.cat)}">${esc(CAT_LABEL[it.cat]||it.cat)}</span>${it.score?`<span class="fit">★ AIMS適合 ${stars(it.score)}</span>`:""}<span class="src">🏷 ${esc(it.src)}</span><span class="ndate">${esc(fmtDate(it.date))}</span></div>
       <h2 class="dtitle">${esc(it.title)}</h2>
       <p class="dsum">${esc(it.summary)}</p>
       ${it.why?`<div class="dfit"><span class="why">💡 ${esc(it.why)}</span></div>`:""}
-      ${desc}
+      ${renderSections(it.desc)}
       <a class="dcta" href="${esc(safeUrl(it.url))}" target="_blank" rel="noopener">記事を読む →</a>
       <div class="dhint">※ 全文・画像は出典元でご確認ください。</div>`;
   }
