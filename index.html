@@ -100,7 +100,7 @@
   .monthhdr{font-size:13px;font-weight:800;color:#cfd5e3;margin:16px 2px 8px;padding-bottom:6px;border-bottom:1px solid var(--line);}
   .monthhdr:first-child{margin-top:0;}
 
-  .row{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;box-shadow:var(--shadow);text-decoration:none;color:inherit;transition:.12s;}
+  .row{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;box-shadow:var(--shadow);text-decoration:none;color:inherit;transition:.12s;cursor:pointer;}
   .row:hover{border-color:#3a4252;transform:translateY(-1px);}
   .row:hover .rtitle{color:var(--brand);}
   .ethumb{flex:0 0 138px;align-self:stretch;min-height:96px;position:relative;border-radius:10px;overflow:hidden;}
@@ -138,7 +138,7 @@
   .tags{margin-top:6px;display:flex;flex-wrap:wrap;gap:6px;}
   .tag{font-size:10.5px;padding:2px 8px;border-radius:999px;background:#20242d;color:#aeb6c4;border:1px solid var(--line);}
 
-  .hero{display:flex;gap:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);text-decoration:none;color:inherit;margin-bottom:14px;transition:.12s;position:relative;}
+  .hero{display:flex;gap:0;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);text-decoration:none;color:inherit;margin-bottom:14px;transition:.12s;position:relative;cursor:pointer;}
   .hero:hover{border-color:#3a4252;} .hero:hover .htitle{color:var(--brand);}
   .hero .hthumb{flex:0 0 44%;min-height:236px;position:relative;}
   .hero.model .hthumb{background:linear-gradient(135deg,#13283b,#1e3c55);}
@@ -154,7 +154,7 @@
   .hero p{font-size:14px;color:#c4cbd8;margin:0 0 12px;}
   .hero .more{font-size:13px;color:var(--brand);font-weight:700;}
 
-  .item{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-left-width:3px;border-radius:12px;padding:12px;box-shadow:var(--shadow);text-decoration:none;color:inherit;transition:.12s;}
+  .item{display:flex;gap:14px;background:var(--card);border:1px solid var(--line);border-left-width:3px;border-radius:12px;padding:12px;box-shadow:var(--shadow);text-decoration:none;color:inherit;transition:.12s;cursor:pointer;}
   .item:hover{border-color:#3a4252;transform:translateY(-1px);} .item:hover h3{color:var(--brand);}
   .item.model{border-left-color:var(--model);} .item.video{border-left-color:var(--video);}
   .item.image{border-left-color:var(--image);} .item.industry{border-left-color:var(--industry);}
@@ -183,6 +183,30 @@
   footer{margin-top:30px;font-size:12px;color:var(--muted);text-align:center;line-height:1.8;}
   .empty{color:var(--muted);font-size:13px;padding:18px;text-align:center;}
 
+  /* ===== detail drawer ===== */
+  .drawer{position:fixed;inset:0;z-index:200;display:none;}
+  .drawer.open{display:block;}
+  .dbackdrop{position:absolute;inset:0;background:rgba(5,7,12,.55);}
+  .dpanel{position:absolute;top:0;right:0;height:100%;width:46%;min-width:340px;max-width:600px;background:#14171e;
+    border-left:1px solid var(--line);box-shadow:-12px 0 50px rgba(0,0,0,.55);overflow-y:auto;
+    transform:translateX(100%);transition:transform .26s cubic-bezier(.4,0,.2,1);}
+  .drawer.open .dpanel{transform:translateX(0);}
+  .dclose{position:absolute;top:12px;right:14px;z-index:5;width:34px;height:34px;border-radius:50%;
+    border:1px solid var(--line);background:rgba(20,23,30,.85);color:var(--ink);font-size:18px;cursor:pointer;line-height:1;}
+  .dclose:hover{background:#222633;border-color:var(--brand);}
+  .dhero{height:200px;background:#0e1014;position:relative;overflow:hidden;border-bottom:1px solid var(--line);}
+  .dhero img{width:100%;height:100%;object-fit:cover;display:block;}
+  .dbody{padding:18px 22px 30px;}
+  .dtitle{font-size:20px;font-weight:800;line-height:1.42;margin:10px 0 10px;}
+  .dfit{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin:0 0 12px;}
+  .dtable{width:100%;border-collapse:collapse;margin:6px 0 18px;font-size:13.5px;}
+  .dtable th{text-align:left;color:var(--muted);font-weight:600;width:62px;padding:8px 10px 8px 0;vertical-align:top;border-bottom:1px solid var(--line);white-space:nowrap;}
+  .dtable td{padding:8px 0;border-bottom:1px solid var(--line);color:var(--ink);}
+  .dsum{font-size:14px;color:#c4cbd8;line-height:1.75;margin:0 0 14px;}
+  .dcta{display:inline-block;margin-top:4px;background:var(--lime);color:#0d1407;font-weight:800;text-decoration:none;padding:11px 20px;border-radius:10px;}
+  .dcta:hover{filter:brightness(1.06);}
+  .dhint{font-size:11.5px;color:var(--muted);margin-top:12px;}
+
   @media(max-width:880px){
     .layout{flex-direction:column;}
     .sidebar{position:static;flex:1 1 auto;width:100%;}
@@ -194,6 +218,7 @@
     .cell{min-height:64px;} .ev{font-size:0;padding:6px;-webkit-line-clamp:1;} .ev::before{content:"●";font-size:10px;}
     .row{gap:10px;} .ethumb{flex-basis:96px;min-height:80px;}
     .thumb{flex-basis:108px;min-height:84px;} .thumb::after{font-size:16px;}
+    .dpanel{width:100%;max-width:none;min-width:0;}
   }
 </style>
 </head>
@@ -202,9 +227,9 @@
   <header class="top">
     <div>
       <h1><span class="brand">AIMS</span> 生成AIハブ <span class="tag">厳選</span></h1>
-      <p class="sub">株式会社AIMSの業務（<b>戦略型AIヒューマン／映像・画像／ブランドコミュニケーション</b>）に直結する、東京＋世界の<b>イベント・コンテスト</b>と<b>AI最新ニュース</b>を、AIクリエイター視点で厳選。各項目に<b>★AIMS適合度</b>付き。自動で最新化されます。</p>
+      <p class="sub">株式会社AIMSの業務（<b>戦略型AIヒューマン／映像・画像／ブランドコミュニケーション</b>）に直結する、東京＋世界の<b>イベント・コンテスト</b>と<b>AI最新ニュース</b>を、AIクリエイター視点で厳選。各項目に<b>★AIMS適合度</b>付き。クリックで右側に詳細が開きます。</p>
     </div>
-    <span class="updated" id="updated">最終更新: 2026年6月12日</span>
+    <span class="updated" id="updated">最終更新: 2026年6月10日</span>
   </header>
 
   <div class="tabs">
@@ -317,15 +342,23 @@
   </footer>
 </div>
 
+<!-- detail drawer -->
+<div class="drawer" id="drawer">
+  <div class="dbackdrop" id="dbackdrop"></div>
+  <aside class="dpanel">
+    <button class="dclose" id="dclose" aria-label="閉じる">×</button>
+    <div id="dcontent"></div>
+  </aside>
+</div>
+
 <script>
 // =========================== EVENTS_START ===========================
 // type: contest|expo|conference|seminar|meetup / format: onsite|hybrid|online
 // themes:[video|image|marketing|tools|business] / img?, deadline?, score(0-100), why
 const EVENTS = [
   {start:"2026-06-17", title:"【アマナ A3】AIは“企画”を民主化したのか？〜プランナーゆる議論〜", type:"seminar", format:"online", time:"12:00–12:50", area:"オンライン", venue:"オンライン", org:"アマナ（A3）", fee:"無料", themes:["marketing","business","tools"], deadline:"2026-06-16", score:92, why:"amanaグループのAIクリエイティブ／企画。AIMSの自社領域ど真ん中", url:"https://insights.amana.jp/event/51597/"},
-  {start:"2026-08-05", end:"2026-08-06", title:"AI・人工知能EXPO NEO 2026（NexTech Week）", type:"expo", format:"onsite", time:"要確認", area:"千代田区・有楽町", venue:"東京国際フォーラム", org:"RX Japan", fee:"入場無料（事前登録制）", themes:["image","video","business"], score:80, why:"AIアバター／デジタルヒューマン・マルチモーダル・生成AI Hubを実機で確認できる", url:"https://www.nextech-week.jp/aineo/ja-jp.html"},
   {start:"2026-08-27", title:"AI博覧会 Summer 2026", type:"expo", format:"onsite", time:"10:00–18:00", area:"新宿区", venue:"新宿住友ビル 三角広場", org:"アイスマイリー", fee:"入場無料（登録制）", themes:["business","marketing","image"], score:74, why:"AI総合EXPO。映像・アバター系の出展やデモを実機で確認できる", url:"https://aismiley.co.jp/ai_hakurankai/"},
-  {start:"2026-08-31", title:"Sparknify Human vs. AI Film Festival 2026（作品応募）", type:"contest", format:"online", time:"応募締切", area:"世界（オンライン応募）", venue:"オンライン応募", org:"Sparknify", fee:"要項確認", themes:["video","image"], deadline:"2026-08-31", score:85, why:"応募できる世界のAI映像コンテスト。実制作の腕試し・露出に最適", url:"https://www.sparknify.com/human-vs-ai-film-festival"},
+  {start:"2026-08-31", title:"Sparknify Human vs. AI Film Festival 2026（作品応募）", type:"contest", format:"online", time:"応募締切", area:"世界（オンライン応募）", venue:"オンライン応募", org:"Sparknify", fee:"早期応募は無料", themes:["video","image"], deadline:"2026-08-31", score:85, why:"応募できる世界のAI映像コンテスト。AI生成部門あり＝Neuで1本出せる", url:"https://filmfreeway.com/humanvsai"},
   {start:"2026-09-03", end:"2026-09-04", title:"AI Commerce EXPO / SNS運用戦略Expo 2026", type:"expo", format:"onsite", time:"10:00–18:00", area:"港区・浜松町", venue:"東京都立産業貿易センター浜松町館 5F", org:"ナノオプト・メディア", fee:"入場無料（登録制）", themes:["marketing","video","business"], score:90, why:"生成AI×SNS・動画・ブランドクリエイティブのハンズオン多数", url:"https://f2ff.jp/event/commerce-sns"},
   {start:"2026-10-05", end:"2026-10-07", title:"生成AIサミット（GenAI/SUM）2026", type:"conference", format:"onsite", time:"終日", area:"千代田区・九段下", venue:"九段会館テラス", org:"日本経済新聞社", fee:"要確認", themes:["business"], score:62, why:"経営・業界トレンドの把握向け（制作直結は弱め・参考枠）", url:"https://www.xsum.jp/gai/"}
 ];
@@ -334,35 +367,28 @@ const EVENTS = [
 // =========================== NEWS_START ===========================
 // cat: model|video|image|industry|creative / img?, score(0-100), why
 const NEWS = [
-  {date:"2026-06-10", cat:"industry", title:"NHK技研、映像の来歴情報で“AIフェイク”対策 ― 撮影・編集・配信履歴をC2PAで検証", src:"Ledge.ai", summary:"撮影・編集・配信の履歴をC2PAで記録し、AI生成・改変を検証。映像の真正性を担保する仕組み。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/Chat_GPT_Image_2026_6_10_02_09_44_5cbdc7543b/Chat_GPT_Image_2026_6_10_02_09_44_5cbdc7543b.jpg", score:62, why:"AI映像の真正性・来歴管理。制作物の信頼性確保に関わる", url:"https://ledge.ai/articles/nhk_provenance_information_c2pa_ai_fake_detection"},
-  {date:"2026-06-06", cat:"video", title:"ElevenLabs、AI吹替モデル「Dubbing v2」提供開始 ― 話者の感情やトーンを再現、90以上の言語に対応", src:"Ledge.ai", summary:"話者の感情・トーンを保ったまま90以上の言語へ吹き替え。AIヒューマンの多言語展開に直結。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12.jpg", score:88, why:"AIヒューマンの声・多言語展開に直結", url:"https://ledge.ai/articles/dubbing_v2_elevenlabs_ai_dubbing"},
+  {date:"2026-06-06", cat:"video", title:"ElevenLabs、AI吹替モデル「Dubbing v2」提供開始 ― 話者の感情やトーンを再現、90以上の言語に対応", src:"Ledge.ai", summary:"AIヒューマンの多言語化に直結。話者の感情・トーンを保ったまま吹き替えが可能に。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12.jpg", score:88, why:"AIヒューマンの声・多言語展開に直結", url:"https://ledge.ai/articles/dubbing_v2_elevenlabs_ai_dubbing"},
   {date:"2026-06-01", cat:"creative", title:"生成AIの「おべっか」を抑え、本音アドバイザーにするプロンプト術", src:"ASCII×AI（柳谷智宣）", summary:"AIの過剰な肯定を避け、厳しい意見を引き出すプロンプトの使い分けを実践的に解説。", img:"https://ascii.jp/img/2026/05/22/4470296/s/c2a33a9656e0bd24.jpg", score:66, why:"制作で効くプロンプトの実践Tips", url:"https://ascii.jp/elem/000/004/404/4404185/"},
   {date:"2026-05-28", cat:"creative", title:"米Amazon、AI生成アニメをPrime Videoで配信へ ― 「GenAI Creators' Fund」で3作品", src:"ASCII×AI", summary:"AI生成作品が配信レベルへ。映像クリエイティブのAI活用が一段と前進。", img:"https://ascii.jp/img/2026/05/28/4473840/s/cd22b1f6c457cad1.png", score:78, why:"AI映像が配信レベルへ。制作・企画の事例として有用", url:"https://ascii.jp/elem/000/004/406/4406008/"},
   {date:"2026-05-25", cat:"image", title:"アニメ特化のローカル画像生成AI「Anima Base v1.0」公開 ― キャラの一貫性に強み", src:"ASCII×AI", summary:"キャラクター一貫性に強い画像生成。AIヒューマン／キャラ制作に有用。", img:"https://ascii.jp/img/2026/05/25/4471461/s/f52eebeb53e05b37.jpg", score:80, why:"キャラ一貫性。AIヒューマン制作に直接活きる", url:"https://ascii.jp/elem/000/004/404/4404597/"},
   {date:"2026-05-20", cat:"video", title:"Google「Gemini Omni」シリーズ発表 ― 動画版「Nano Banana」がついに登場", src:"ASCII×AI", summary:"動画生成の新潮流。制作の選択肢が拡大。", img:"https://ascii.jp/img/2026/05/20/4469029/s/ee23873804df7a3c.jpg", score:84, why:"動画生成の新潮流。制作ツールの選択肢拡大", url:"https://ascii.jp/elem/000/004/403/4403465/"},
-  {date:"2026-05-19", cat:"video", title:"グーグルの新しい動画生成AI、まもなく発表か ― 「Veo 4/Omni」対応を予告", src:"ASCII×AI", summary:"次世代動画生成モデルへの近日対応を予告。制作ツールの最新動向。", img:"https://ascii.jp/img/2026/05/19/4468643/s/6a15f1a694ea2675.jpg", score:72, why:"動画生成モデルの最新動向。ツール選定の参考", url:"https://ascii.jp/elem/000/004/403/4403274/"},
-  {date:"2026-05-18", cat:"creative", title:"キャラクター召喚装置「Gatebox3」登場 ― 推しキャラと暮らす体験を具現化", src:"ASCII×AI", summary:"AIキャラクターと共に暮らす体験デバイスの第3世代。バーチャルIP活用の参考事例。", img:"https://ascii.jp/img/2026/05/15/4466764/s/51b3946ba793f278.jpg", score:70, why:"AIキャラ／デジタルヒューマンの体験事例。IP活用の参考", url:"https://ascii.jp/elem/000/004/402/4402304/"},
   {date:"2026-05-15", cat:"video", title:"動画生成AIの「Runway」が日本進出 ― 東京オフィス開設、約62億円を初期投資", src:"ASCII×AI", summary:"AI動画制作の主要ツールが日本本格展開。", img:"https://ascii.jp/img/2026/05/15/4467006/s/511a62b29242e5cf.png", score:86, why:"主要AI動画ツールの日本本格展開", url:"https://ascii.jp/elem/000/004/402/4402511/"}
 ];
 // =========================== NEWS_END ===========================
 
 // =========================== ARCHIVE_START ===========================
 const ARCHIVE = [
-  {date:"2026-06-10", cat:"industry", title:"NHK技研、映像の来歴情報で“AIフェイク”対策 ― 撮影・編集・配信履歴をC2PAで検証", src:"Ledge.ai", summary:"映像の来歴をC2PAで検証し真正性を担保。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/Chat_GPT_Image_2026_6_10_02_09_44_5cbdc7543b/Chat_GPT_Image_2026_6_10_02_09_44_5cbdc7543b.jpg", score:62, why:"AI映像の真正性・来歴管理に関わる", url:"https://ledge.ai/articles/nhk_provenance_information_c2pa_ai_fake_detection"},
   {date:"2026-06-06", cat:"video", title:"ElevenLabs、AI吹替モデル「Dubbing v2」提供開始 ― 話者の感情やトーンを再現、90以上の言語に対応", src:"Ledge.ai", summary:"AIヒューマンの多言語化に直結。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12.jpg", score:88, why:"AIヒューマンの声・多言語展開に直結", url:"https://ledge.ai/articles/dubbing_v2_elevenlabs_ai_dubbing"},
   {date:"2026-06-01", cat:"creative", title:"生成AIの「おべっか」を抑え、本音アドバイザーにするプロンプト術", src:"ASCII×AI（柳谷智宣）", summary:"プロンプトの使い分けを実践解説。", img:"https://ascii.jp/img/2026/05/22/4470296/s/c2a33a9656e0bd24.jpg", score:66, why:"制作で効くプロンプトの実践Tips", url:"https://ascii.jp/elem/000/004/404/4404185/"},
   {date:"2026-05-28", cat:"creative", title:"米Amazon、AI生成アニメをPrime Videoで配信へ ― 「GenAI Creators' Fund」で3作品", src:"ASCII×AI", summary:"AI映像が配信レベルへ。", img:"https://ascii.jp/img/2026/05/28/4473840/s/cd22b1f6c457cad1.png", score:78, why:"AI映像が配信レベルへ。事例参考", url:"https://ascii.jp/elem/000/004/406/4406008/"},
   {date:"2026-05-25", cat:"image", title:"アニメ特化のローカル画像生成AI「Anima Base v1.0」公開 ― キャラの一貫性に強み", src:"ASCII×AI", summary:"キャラ一貫性に強い画像生成。", img:"https://ascii.jp/img/2026/05/25/4471461/s/f52eebeb53e05b37.jpg", score:80, why:"キャラ一貫性。AIヒューマン制作に有用", url:"https://ascii.jp/elem/000/004/404/4404597/"},
   {date:"2026-05-20", cat:"video", title:"Google「Gemini Omni」シリーズ発表 ― 動画版「Nano Banana」がついに登場", src:"ASCII×AI", summary:"動画生成の新潮流。", img:"https://ascii.jp/img/2026/05/20/4469029/s/ee23873804df7a3c.jpg", score:84, why:"動画生成の新潮流", url:"https://ascii.jp/elem/000/004/403/4403465/"},
-  {date:"2026-05-19", cat:"video", title:"グーグルの新しい動画生成AI、まもなく発表か ― 「Veo 4/Omni」対応を予告", src:"ASCII×AI", summary:"次世代動画生成モデルの近日対応を予告。", img:"https://ascii.jp/img/2026/05/19/4468643/s/6a15f1a694ea2675.jpg", score:72, why:"動画生成モデルの最新動向", url:"https://ascii.jp/elem/000/004/403/4403274/"},
-  {date:"2026-05-18", cat:"creative", title:"キャラクター召喚装置「Gatebox3」登場 ― 推しキャラと暮らす体験を具現化", src:"ASCII×AI", summary:"AIキャラと暮らす体験デバイス第3世代。", img:"https://ascii.jp/img/2026/05/15/4466764/s/51b3946ba793f278.jpg", score:70, why:"AIキャラ／デジタルヒューマンの事例", url:"https://ascii.jp/elem/000/004/402/4402304/"},
   {date:"2026-05-15", cat:"video", title:"動画生成AIの「Runway」が日本進出 ― 東京オフィス開設、約62億円を初期投資", src:"ASCII×AI", summary:"主要AI動画ツールの日本本格展開。", img:"https://ascii.jp/img/2026/05/15/4467006/s/511a62b29242e5cf.png", score:86, why:"主要AI動画ツールの日本本格展開", url:"https://ascii.jp/elem/000/004/402/4402511/"}
 ];
 // =========================== ARCHIVE_END ===========================
 
 const WD=["日","月","火","水","木","金","土"];
 const TODAY=new Date(2026,5,10); // 2026-06-10
-// security: escape scraped text for innerHTML, restrict URLs to http(s)
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function safeUrl(u){u=String(u==null?"":u).trim();return /^https?:\/\//i.test(u)?u:"#";}
 function stars(s){s=+s||0;return s>=85?"★★★":s>=70?"★★":"★";}
@@ -381,6 +407,8 @@ document.querySelectorAll(".tab").forEach(t=>{
 const TYPE_LABEL={contest:"コンテスト・大会",expo:"大型EXPO・展示会",conference:"カンファレンス",seminar:"セミナー・講座",meetup:"勉強会・交流会"};
 const FMT_LABEL={onsite:"現地",hybrid:"ハイブリッド",online:"オンライン"};
 const THEME_LABEL={video:"動画・映像",image:"画像・デザイン",marketing:"マーケ・SNS",tools:"ツール・エージェント",business:"ビジネス活用"};
+const CAT_LABEL={model:"モデル・ツール",video:"動画生成",image:"画像生成",industry:"業界・ビジネス",creative:"マーケ・クリエイティブ"};
+
 const cstate={year:2026,month:5,q:"",sort:"asc",
   types:new Set(["contest","expo","conference","seminar","meetup"]),
   fmts:new Set(["onsite","hybrid","online"]),
@@ -401,6 +429,53 @@ function deadlineInfo(ev){
   if(days<=7)return{txt:`⏰ ${label}まで${days}日（${md}まで）`,cls:"dl-soon"};
   return{txt:`${label} ${md}`,cls:"dl-normal"};
 }
+function evDateStr(ev){const s=parse(ev.start);
+  return ev.end?`${s.getMonth()+1}/${s.getDate()}〜${parse(ev.end).getMonth()+1}/${parse(ev.end).getDate()}`:`${s.getMonth()+1}/${s.getDate()}(${WD[s.getDay()]})`;}
+function fmtDate(d){const p=d.split("-");return p.length===3?`${p[0]}.${p[1]}.${p[2]}`:p.length===2?`${p[0]}.${p[1]}`:d;}
+function isNew(d){const p=d.split("-");if(p.length<3)return false;const dt=new Date(+p[0],+p[1]-1,+p[2]);const diff=(TODAY-dt)/86400000;return diff>=0&&diff<=3;}
+function ndate(d){const p=d.split("-");return p.length>=2?new Date(+p[0],+p[1]-1,+(p[2]||1)):new Date(+p[0],0,1);}
+
+/* ===== detail drawer ===== */
+function openDetail(it,kind){
+  const c=document.getElementById("dcontent");
+  const heroImg=it.img?`<div class="dhero"><img src="${esc(safeUrl(it.img))}" alt="" onerror="this.parentNode.style.display='none'"></div>`:"";
+  let body="";
+  if(kind==="event"){
+    const dl=deadlineInfo(it);
+    const tags=(it.themes||[]).map(t=>`<span class="tag">${esc(THEME_LABEL[t]||t)}</span>`).join("");
+    body=`<div class="ntop"><span class="badge ${esc(it.type)}">${esc(TYPE_LABEL[it.type]||it.type)}</span><span class="fmt ${esc(it.format)}">${esc(FMT_LABEL[it.format]||it.format)}</span></div>
+      <h2 class="dtitle">${esc(it.title)}</h2>
+      ${it.score?`<div class="dfit"><span class="fit">★ AIMS適合 ${stars(it.score)}</span><span class="why">${esc(it.why||"")}</span></div>`:""}
+      <div class="dlbar ${dl.cls}">${esc(dl.txt)}</div>
+      <table class="dtable">
+        <tr><th>日付</th><td>${esc(evDateStr(it))}</td></tr>
+        <tr><th>時間</th><td>${esc(it.time)}</td></tr>
+        <tr><th>会場</th><td>${esc(it.venue)}（${esc(it.area)}）</td></tr>
+        <tr><th>主催</th><td>${esc(it.org)}</td></tr>
+        <tr><th>料金</th><td>${esc(it.fee)}</td></tr>
+        <tr><th>テーマ</th><td>${tags}</td></tr>
+      </table>
+      <a class="dcta" href="${esc(safeUrl(it.url))}" target="_blank" rel="noopener">公式ページを開く →</a>
+      <div class="dhint">※ 申込・最新情報は公式ページでご確認ください。</div>`;
+  }else{
+    body=`<div class="ntop"><span class="cat ${esc(it.cat)}">${esc(CAT_LABEL[it.cat]||it.cat)}</span>${it.score?`<span class="fit">★ AIMS適合 ${stars(it.score)}</span>`:""}<span class="src">🏷 ${esc(it.src)}</span><span class="ndate">${esc(fmtDate(it.date))}</span></div>
+      <h2 class="dtitle">${esc(it.title)}</h2>
+      <p class="dsum">${esc(it.summary)}</p>
+      ${it.why?`<div class="dfit"><span class="why">💡 ${esc(it.why)}</span></div>`:""}
+      <a class="dcta" href="${esc(safeUrl(it.url))}" target="_blank" rel="noopener">記事を読む →</a>
+      <div class="dhint">※ 全文・画像は出典元でご確認ください。</div>`;
+  }
+  c.innerHTML=heroImg+`<div class="dbody">${body}</div>`;
+  document.getElementById("drawer").classList.add("open");
+  document.body.style.overflow="hidden";
+}
+function closeDrawer(){document.getElementById("drawer").classList.remove("open");document.body.style.overflow="";}
+document.getElementById("dclose").onclick=closeDrawer;
+document.getElementById("dbackdrop").onclick=closeDrawer;
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDrawer();});
+function cardClick(e,it,kind){if(e.metaKey||e.ctrlKey||e.shiftKey||e.button===1)return;e.preventDefault();openDetail(it,kind);}
+
+/* ===== calendar ===== */
 function renderCalendar(){
   document.getElementById("monthLabel").textContent=`${cstate.year}年 ${cstate.month+1}月`;
   const grid=document.getElementById("grid");grid.innerHTML="";
@@ -415,12 +490,10 @@ function renderCalendar(){
     const num=document.createElement("div");num.className="num";num.textContent=dn;cell.appendChild(num);
     EVENTS.filter(passC).filter(ev=>inRange(ev,date)).forEach(ev=>{
       const a=document.createElement("a");a.className="ev "+ev.type;a.href=safeUrl(ev.url);a.target="_blank";a.rel="noopener";
-      a.textContent=ev.title;a.title=ev.title+" / "+ev.venue;cell.appendChild(a);});
+      a.textContent=ev.title;a.title=ev.title;a.onclick=(e)=>cardClick(e,ev,"event");cell.appendChild(a);});
     grid.appendChild(cell);
   }
 }
-function evDateStr(ev){const s=parse(ev.start);
-  return ev.end?`${s.getMonth()+1}/${s.getDate()}〜${parse(ev.end).getMonth()+1}/${parse(ev.end).getDate()}`:`${s.getMonth()+1}/${s.getDate()}(${WD[s.getDay()]})`;}
 function renderAgenda(){
   let list=EVENTS.filter(passC).sort((a,b)=>parse(a.start)-parse(b.start));
   if(cstate.sort==="desc")list.reverse();
@@ -428,6 +501,7 @@ function renderAgenda(){
   if(!list.length){wrap.innerHTML='<div class="empty">条件に合うイベントがありません。検索や絞り込みを調整してください。</div>';updateCount();return;}
   list.forEach(ev=>{
     const a=document.createElement("a");a.className="row";a.href=safeUrl(ev.url);a.target="_blank";a.rel="noopener";
+    a.onclick=(e)=>cardClick(e,ev,"event");
     const img=ev.img?`<img src="${esc(safeUrl(ev.img))}" loading="lazy" alt="" onerror="this.remove()">`:"";
     const tags=ev.themes.map(t=>`<span class="tag">${esc(THEME_LABEL[t]||t)}</span>`).join("");
     const week=isThisWeek(ev)?'<span class="weekb">今週</span>':'';
@@ -450,21 +524,20 @@ document.getElementById("qcal").oninput=e=>{cstate.q=e.target.value.trim().toLow
 document.querySelectorAll("#sortcal button").forEach(b=>b.onclick=()=>{
   cstate.sort=b.dataset.s;document.querySelectorAll("#sortcal button").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderAgenda();});
 
-const CAT_LABEL={model:"モデル・ツール",video:"動画生成",image:"画像生成",industry:"業界・ビジネス",creative:"マーケ・クリエイティブ"};
-function fmtDate(d){const p=d.split("-");return p.length===3?`${p[0]}.${p[1]}.${p[2]}`:p.length===2?`${p[0]}.${p[1]}`:d;}
-function isNew(d){const p=d.split("-");if(p.length<3)return false;const dt=new Date(+p[0],+p[1]-1,+p[2]);const diff=(TODAY-dt)/86400000;return diff>=0&&diff<=3;}
-function ndate(d){const p=d.split("-");return p.length>=2?new Date(+p[0],+p[1]-1,+(p[2]||1)):new Date(+p[0],0,1);}
+/* ===== news / archive ===== */
 function newsCard(n,hero){
   const img=n.img?`<img src="${esc(safeUrl(n.img))}" loading="lazy" alt="" onerror="this.remove()">`:"";
   const fit=n.score?`<span class="fit">★ AIMS適合 ${stars(n.score)}</span>`:"";
   const meta=`<div class="ntop"><span class="cat ${esc(n.cat)}">${esc(CAT_LABEL[n.cat]||n.cat)}</span>${fit}<span class="src">🏷 ${esc(n.src)}</span>
       <span class="ndate">${esc(fmtDate(n.date))}</span>${isNew(n.date)?'<span class="newb">NEW</span>':''}</div>`;
-  const why=n.why?`<div class="fitrow"><span class="why">${esc(n.why)}</span></div>`:"";
+  const why=n.why?`<div class="fitrow"><span class="why">💡 ${esc(n.why)}</span></div>`:"";
   if(hero){const a=document.createElement("a");a.className="hero "+esc(n.cat);a.href=safeUrl(n.url);a.target="_blank";a.rel="noopener";
+    a.onclick=(e)=>cardClick(e,n,"news");
     a.innerHTML=`<div class="hthumb"><span class="feat">注目</span>${img}</div>
-      <div class="hbody">${meta}<div class="htitle">${esc(n.title)}</div><p>${esc(n.summary)}</p>${why}<span class="more">記事を読む →</span></div>`;
+      <div class="hbody">${meta}<div class="htitle">${esc(n.title)}</div><p>${esc(n.summary)}</p>${why}<span class="more">詳細を見る →</span></div>`;
     return a;}
   const a=document.createElement("a");a.className="item "+esc(n.cat);a.href=safeUrl(n.url);a.target="_blank";a.rel="noopener";
+  a.onclick=(e)=>cardClick(e,n,"news");
   a.innerHTML=`<div class="thumb">${img}</div><div class="ibody">${meta}<h3>${esc(n.title)}</h3><p>${esc(n.summary)}</p>${why}</div>`;
   return a;
 }
