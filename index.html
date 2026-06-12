@@ -204,7 +204,7 @@
       <h1><span class="brand">AIMS</span> 生成AIハブ <span class="tag">厳選</span></h1>
       <p class="sub">株式会社AIMSの業務（<b>戦略型AIヒューマン／映像・画像／ブランドコミュニケーション</b>）に直結する、東京＋世界の<b>イベント・コンテスト</b>と<b>AI最新ニュース</b>を、AIクリエイター視点で厳選。各項目に<b>★AIMS適合度</b>付き。自動で最新化されます。</p>
     </div>
-    <span class="updated" id="updated">最終更新: 2026年6月10日</span>
+    <span class="updated" id="updated">最終更新: 2026年6月12日</span>
   </header>
 
   <div class="tabs">
@@ -333,22 +333,28 @@ const EVENTS = [
 // =========================== NEWS_START ===========================
 // cat: model|video|image|industry|creative / img?, score(0-100), why
 const NEWS = [
-  {date:"2026-06-06", cat:"video", title:"ElevenLabs、AI吹替モデル「Dubbing v2」提供開始 ― 話者の感情やトーンを再現、90以上の言語に対応", src:"Ledge.ai", summary:"AIヒューマンの多言語化に直結。話者の感情・トーンを保ったまま吹き替えが可能に。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12.jpg", score:88, why:"AIヒューマンの声・多言語展開に直結", url:"https://ledge.ai/articles/dubbing_v2_elevenlabs_ai_dubbing"},
+  {date:"2026-06-10", cat:"industry", title:"NHK技研、映像の来歴情報で“AIフェイク”対策 ― 撮影・編集・配信履歴をC2PAで検証", src:"Ledge.ai", summary:"撮影・編集・配信の履歴をC2PAで記録し、AI生成・改変を検証。映像の真正性を担保する仕組み。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/Chat_GPT_Image_2026_6_10_02_09_44_5cbdc7543b/Chat_GPT_Image_2026_6_10_02_09_44_5cbdc7543b.jpg", score:62, why:"AI映像の真正性・来歴管理。制作物の信頼性確保に関わる", url:"https://ledge.ai/articles/nhk_provenance_information_c2pa_ai_fake_detection"},
+  {date:"2026-06-06", cat:"video", title:"ElevenLabs、AI吹替モデル「Dubbing v2」提供開始 ― 話者の感情やトーンを再現、90以上の言語に対応", src:"Ledge.ai", summary:"話者の感情・トーンを保ったまま90以上の言語へ吹き替え。AIヒューマンの多言語展開に直結。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12.jpg", score:88, why:"AIヒューマンの声・多言語展開に直結", url:"https://ledge.ai/articles/dubbing_v2_elevenlabs_ai_dubbing"},
   {date:"2026-06-01", cat:"creative", title:"生成AIの「おべっか」を抑え、本音アドバイザーにするプロンプト術", src:"ASCII×AI（柳谷智宣）", summary:"AIの過剰な肯定を避け、厳しい意見を引き出すプロンプトの使い分けを実践的に解説。", img:"https://ascii.jp/img/2026/05/22/4470296/s/c2a33a9656e0bd24.jpg", score:66, why:"制作で効くプロンプトの実践Tips", url:"https://ascii.jp/elem/000/004/404/4404185/"},
   {date:"2026-05-28", cat:"creative", title:"米Amazon、AI生成アニメをPrime Videoで配信へ ― 「GenAI Creators' Fund」で3作品", src:"ASCII×AI", summary:"AI生成作品が配信レベルへ。映像クリエイティブのAI活用が一段と前進。", img:"https://ascii.jp/img/2026/05/28/4473840/s/cd22b1f6c457cad1.png", score:78, why:"AI映像が配信レベルへ。制作・企画の事例として有用", url:"https://ascii.jp/elem/000/004/406/4406008/"},
   {date:"2026-05-25", cat:"image", title:"アニメ特化のローカル画像生成AI「Anima Base v1.0」公開 ― キャラの一貫性に強み", src:"ASCII×AI", summary:"キャラクター一貫性に強い画像生成。AIヒューマン／キャラ制作に有用。", img:"https://ascii.jp/img/2026/05/25/4471461/s/f52eebeb53e05b37.jpg", score:80, why:"キャラ一貫性。AIヒューマン制作に直接活きる", url:"https://ascii.jp/elem/000/004/404/4404597/"},
   {date:"2026-05-20", cat:"video", title:"Google「Gemini Omni」シリーズ発表 ― 動画版「Nano Banana」がついに登場", src:"ASCII×AI", summary:"動画生成の新潮流。制作の選択肢が拡大。", img:"https://ascii.jp/img/2026/05/20/4469029/s/ee23873804df7a3c.jpg", score:84, why:"動画生成の新潮流。制作ツールの選択肢拡大", url:"https://ascii.jp/elem/000/004/403/4403465/"},
+  {date:"2026-05-19", cat:"video", title:"グーグルの新しい動画生成AI、まもなく発表か ― 「Veo 4/Omni」対応を予告", src:"ASCII×AI", summary:"次世代動画生成モデルへの近日対応を予告。制作ツールの最新動向。", img:"https://ascii.jp/img/2026/05/19/4468643/s/6a15f1a694ea2675.jpg", score:72, why:"動画生成モデルの最新動向。ツール選定の参考", url:"https://ascii.jp/elem/000/004/403/4403274/"},
+  {date:"2026-05-18", cat:"creative", title:"キャラクター召喚装置「Gatebox3」登場 ― 推しキャラと暮らす体験を具現化", src:"ASCII×AI", summary:"AIキャラクターと共に暮らす体験デバイスの第3世代。バーチャルIP活用の参考事例。", img:"https://ascii.jp/img/2026/05/15/4466764/s/51b3946ba793f278.jpg", score:70, why:"AIキャラ／デジタルヒューマンの体験事例。IP活用の参考", url:"https://ascii.jp/elem/000/004/402/4402304/"},
   {date:"2026-05-15", cat:"video", title:"動画生成AIの「Runway」が日本進出 ― 東京オフィス開設、約62億円を初期投資", src:"ASCII×AI", summary:"AI動画制作の主要ツールが日本本格展開。", img:"https://ascii.jp/img/2026/05/15/4467006/s/511a62b29242e5cf.png", score:86, why:"主要AI動画ツールの日本本格展開", url:"https://ascii.jp/elem/000/004/402/4402511/"}
 ];
 // =========================== NEWS_END ===========================
 
 // =========================== ARCHIVE_START ===========================
 const ARCHIVE = [
+  {date:"2026-06-10", cat:"industry", title:"NHK技研、映像の来歴情報で“AIフェイク”対策 ― 撮影・編集・配信履歴をC2PAで検証", src:"Ledge.ai", summary:"映像の来歴をC2PAで検証し真正性を担保。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/Chat_GPT_Image_2026_6_10_02_09_44_5cbdc7543b/Chat_GPT_Image_2026_6_10_02_09_44_5cbdc7543b.jpg", score:62, why:"AI映像の真正性・来歴管理に関わる", url:"https://ledge.ai/articles/nhk_provenance_information_c2pa_ai_fake_detection"},
   {date:"2026-06-06", cat:"video", title:"ElevenLabs、AI吹替モデル「Dubbing v2」提供開始 ― 話者の感情やトーンを再現、90以上の言語に対応", src:"Ledge.ai", summary:"AIヒューマンの多言語化に直結。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12.jpg", score:88, why:"AIヒューマンの声・多言語展開に直結", url:"https://ledge.ai/articles/dubbing_v2_elevenlabs_ai_dubbing"},
   {date:"2026-06-01", cat:"creative", title:"生成AIの「おべっか」を抑え、本音アドバイザーにするプロンプト術", src:"ASCII×AI（柳谷智宣）", summary:"プロンプトの使い分けを実践解説。", img:"https://ascii.jp/img/2026/05/22/4470296/s/c2a33a9656e0bd24.jpg", score:66, why:"制作で効くプロンプトの実践Tips", url:"https://ascii.jp/elem/000/004/404/4404185/"},
   {date:"2026-05-28", cat:"creative", title:"米Amazon、AI生成アニメをPrime Videoで配信へ ― 「GenAI Creators' Fund」で3作品", src:"ASCII×AI", summary:"AI映像が配信レベルへ。", img:"https://ascii.jp/img/2026/05/28/4473840/s/cd22b1f6c457cad1.png", score:78, why:"AI映像が配信レベルへ。事例参考", url:"https://ascii.jp/elem/000/004/406/4406008/"},
   {date:"2026-05-25", cat:"image", title:"アニメ特化のローカル画像生成AI「Anima Base v1.0」公開 ― キャラの一貫性に強み", src:"ASCII×AI", summary:"キャラ一貫性に強い画像生成。", img:"https://ascii.jp/img/2026/05/25/4471461/s/f52eebeb53e05b37.jpg", score:80, why:"キャラ一貫性。AIヒューマン制作に有用", url:"https://ascii.jp/elem/000/004/404/4404597/"},
   {date:"2026-05-20", cat:"video", title:"Google「Gemini Omni」シリーズ発表 ― 動画版「Nano Banana」がついに登場", src:"ASCII×AI", summary:"動画生成の新潮流。", img:"https://ascii.jp/img/2026/05/20/4469029/s/ee23873804df7a3c.jpg", score:84, why:"動画生成の新潮流", url:"https://ascii.jp/elem/000/004/403/4403465/"},
+  {date:"2026-05-19", cat:"video", title:"グーグルの新しい動画生成AI、まもなく発表か ― 「Veo 4/Omni」対応を予告", src:"ASCII×AI", summary:"次世代動画生成モデルの近日対応を予告。", img:"https://ascii.jp/img/2026/05/19/4468643/s/6a15f1a694ea2675.jpg", score:72, why:"動画生成モデルの最新動向", url:"https://ascii.jp/elem/000/004/403/4403274/"},
+  {date:"2026-05-18", cat:"creative", title:"キャラクター召喚装置「Gatebox3」登場 ― 推しキャラと暮らす体験を具現化", src:"ASCII×AI", summary:"AIキャラと暮らす体験デバイス第3世代。", img:"https://ascii.jp/img/2026/05/15/4466764/s/51b3946ba793f278.jpg", score:70, why:"AIキャラ／デジタルヒューマンの事例", url:"https://ascii.jp/elem/000/004/402/4402304/"},
   {date:"2026-05-15", cat:"video", title:"動画生成AIの「Runway」が日本進出 ― 東京オフィス開設、約62億円を初期投資", src:"ASCII×AI", summary:"主要AI動画ツールの日本本格展開。", img:"https://ascii.jp/img/2026/05/15/4467006/s/511a62b29242e5cf.png", score:86, why:"主要AI動画ツールの日本本格展開", url:"https://ascii.jp/elem/000/004/402/4402511/"}
 ];
 // =========================== ARCHIVE_END ===========================
