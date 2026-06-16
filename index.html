@@ -239,7 +239,7 @@
       <h1><span class="brand">AIMS</span> 生成AIハブ <span class="tag">厳選</span></h1>
       <p class="sub">株式会社AIMSの業務（<b>戦略型AIヒューマン／映像・画像／ブランドコミュニケーション</b>）に直結する、東京＋世界の<b>イベント・コンテスト</b>と<b>AI最新ニュース</b>を、AIクリエイター視点で厳選。各項目に<b>★AIMS適合度</b>付き。クリックで右側に詳細が開きます。</p>
     </div>
-    <span class="updated" id="updated">最終更新: 2026年6月15日</span>
+    <span class="updated" id="updated">最終更新: 2026年6月16日</span>
   </header>
 
   <div class="tabs">
@@ -412,7 +412,8 @@ const NEWS = [
   {date:"2026-06-11", cat:"video", title:"xAI、画像1枚から最大720p動画を生成する「Grok Imagine 1.5 Preview」発表 ― 外部ベンチマークで1位・2位に", src:"Ledge.ai", summary:"1枚の画像から720p動画を生成。image-to-videoの高性能モデルがリール・広告制作の選択肢に。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/videoframe_383_1f9856ed37/videoframe_383_1f9856ed37.png", score:88, why:"image-to-video。リール／広告制作の即戦力候補", readmin:3, url:"https://ledge.ai/articles/xai_grok_imagine_1_5_preview_image_to_video"},
   {date:"2026-06-10", cat:"industry", title:"NHK技研、映像の来歴情報で“AIフェイク”対策 ― 撮影・編集・配信履歴をC2PAで検証", src:"Ledge.ai", summary:"映像の制作・編集履歴をC2PAで検証する仕組み。AI映像・実写の真正性担保が制作現場の論点に。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/Chat_GPT_Image_2026_6_10_02_09_44_5cbdc7543b/Chat_GPT_Image_2026_6_10_02_09_44_5cbdc7543b.jpg", score:64, why:"映像の真正性。AI映像制作の信頼性に関わる", readmin:3, url:"https://ledge.ai/articles/nhk_provenance_information_c2pa_ai_fake_detection"},
   {date:"2026-06-09", cat:"image", title:"LINEヤフー「Agent i」に画像生成機能を追加 ― LINE／Yahoo!からテキストで画像生成・加工", src:"ASCII×AI", summary:"LINEやYahoo!上でテキストから画像生成・加工が可能に。OpenAI API採用で生成画像が身近に。", img:"https://ascii.jp/img/2026/06/09/4480639/xl/54797a46ef0617d3.png", score:70, why:"画像生成の裾野拡大。制作の入口として参考", readmin:3, url:"https://ascii.jp/elem/000/004/409/4409254/"},
-  {date:"2026-06-08", cat:"creative", title:"ローカルAIと音声合成でキャラが自然にしゃべる ― 日本語TTS「Irodori-TTS v3」×「Gemma 4」で対話アプリ自作", src:"ASCII×AI（新清士）", summary:"感情表現できる日本語TTSとローカルLLMを連携し、待ち時間なく話すキャラAIを構築。AIヒューマン音声の実践例。", img:"https://ascii.jp/img/2026/06/08/4479639/xl/2be188e4f588a1bf.png", score:84, why:"AIヒューマン音声の実装ノウハウ。制作の即戦力", readmin:5, url:"https://ascii.jp/elem/000/004/408/4408692/"}
+  {date:"2026-06-08", cat:"creative", title:"ローカルAIと音声合成でキャラが自然にしゃべる ― 日本語TTS「Irodori-TTS v3」×「Gemma 4」で対話アプリ自作", src:"ASCII×AI（新清士）", summary:"感情表現できる日本語TTSとローカルLLMを連携し、待ち時間なく話すキャラAIを構築。AIヒューマン音声の実践例。", img:"https://ascii.jp/img/2026/06/08/4479639/xl/2be188e4f588a1bf.png", score:84, why:"AIヒューマン音声の実装ノウハウ。制作の即戦力", readmin:5, url:"https://ascii.jp/elem/000/004/408/4408692/"},
+  {date:"2026-06-06", cat:"video", title:"ElevenLabs、AI吹替モデル「Dubbing v2」提供開始 ― 話者の感情やトーンを再現、90以上の言語に対応", src:"Ledge.ai", summary:"話者の感情・トーンを保ったままAI吹替。AIヒューマンの多言語リール・広告制作に直結。", img:"https://storage.googleapis.com/ledge-ai-prd-public-bucket/media/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12/H_Jat_S5_J_Xw_A_Quk_Pq_709d16fb12.jpg", score:88, why:"AIヒューマンの声・多言語展開に直結", readmin:3, url:"https://ledge.ai/articles/dubbing_v2_elevenlabs_ai_dubbing"}
 ];
 // =========================== NEWS_END ===========================
 
@@ -434,7 +435,7 @@ const ARCHIVE = [
 // =========================== ARCHIVE_END ===========================
 
 const WD=["日","月","火","水","木","金","土"];
-const TODAY=new Date(2026,5,15); // 2026-06-15
+const TODAY=new Date(2026,5,16); // 2026-06-16
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
 function safeUrl(u){u=String(u==null?"":u).trim();return /^https?:\/\//i.test(u)?u:"#";}
 function stars(s){s=+s||0;return s>=85?"★★★":s>=70?"★★":"★";}
@@ -595,11 +596,4 @@ function newsCard(n,hero){
   a.innerHTML=`<div class="thumb">${img}</div><div class="ibody">${meta}<h3>${esc(n.title)}</h3><p>${esc(n.summary)}</p>${why}</div>`;
   return a;
 }
-const nstate={q:"",sort:"desc",cats:new Set(["model","video","image","industry","creative"])};
-function passN(n){if(!nstate.cats.has(n.cat))return false;if(nstate.q&&!(n.title+n.summary+n.src).toLowerCase().includes(nstate.q))return false;return true;}
-function renderNews(){
-  let list=NEWS.filter(passN).sort((a,b)=>ndate(b.date)-ndate(a.date));
-  if(nstate.sort==="asc")list.reverse();
-  const hero=document.getElementById("hero");const wrap=document.getElementById("list");
-  hero.innerHTML="";wrap.innerHTML="";
-  if(!list.length){wrap.innerHTML='<div class="empty">条件に合う記事がありません。検索やカテゴリを調整してください。</div>';updateCount(
+const nstate={q:"",sort:"desc",cats:new Set(["model","video","image","ind
