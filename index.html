@@ -365,50 +365,16 @@
 // type:contest|expo|conference|seminar|meetup / format:onsite|hybrid|online
 // themes:[...] / img?, deadline?, score, why / desc:[{h:見出し, b:本文 or 箇条書き配列}]
 const EVENTS = [
-  {start:”2026-07-02”, title:”クリエイティブ制作の変革期を生き抜く「AI×著作権」の実務”, type:”seminar”, format:”online”, time:”12:00–12:50”, area:”オンライン”, venue:”オンライン（Zoom）”, org:”アマナ”, fee:”無料”, themes:[“marketing”,”tools”,”business”], img:”https://insights.amana.jp/wp-content/uploads/2026/06/20260702_CreativeRights_webinar_1200x630.jpg”, deadline:”2026-07-01”, score:80, why:”AI×著作権の実務。生成AI制作で直面するリスクと対応策を、専門弁護士とクリエイティブ現場目線で体系整理できる”, url:”https://insights.amana.jp/event/51882/”, desc:[
-    {h:”どんなイベント？”, b:”著作権法・芸術文化法の専門弁護士を招き、生成AI×著作権の基本的な考え方・実務上のリスク・安全に活用するための対応策を解説するオンラインウェビナー（50分・無料）。広報・マーケティング・クリエイティブ制作部門向け。”},
-    {h:”得られること”, b:[“AI生成物の著作権リスクを整理する判断軸”,”炎上・ブランド毀損を防ぐ実務上の対応策”,”生成AIを安心して活用するためのルール設計の考え方”]},
-    {h:”AIMSでの活用アイデア”, b:”Seedance・Kling等で制作するAIヒューマン映像や広告素材の権利処理を、現場レベルで整理できる機会。受注案件でクライアントにAI活用のリスク管理を説明する際の知識ベースにもなる。申込締切は前日7月1日（水）15:00。”}
-  ]},
-  {start:”2026-07-06”, title:”Red Rocks AI Film Festival 2026（作品応募）”, type:”contest”, format:”hybrid”, time:”応募締切（Late: 7/6・延長: 8/10）”, area:”世界（オンライン応募）”, venue:”オンライン応募（本祭：Electric Theater Center, Utah, USA）”, org:”Red Rocks AI Film Festival”, fee:”US$39〜（Late Deadline）／US$49〜（延長締切）”, themes:[“video”,”image”,”marketing”], img:”https://filmfreeway-production-storage-01-connector.filmfreeway.com/festivals/logos/000/086/744/large/logo.jpg?1739865758”, deadline:”2026-08-10”, score:75, why:”Best AI AD部門あり＝AIヒューマン×広告動画で応募できる世界のAI映像コンテスト”, url:”https://filmfreeway.com/RedRocksAIFilmFestival”, desc:[
-    {h:”どんなコンテスト？”, b:”AIを使った映像作品の制作者を表彰するグローバルな映画祭。2026年9月24日（水）にユタ州セントジョージで開催・オンライン配信も実施。「Illuminate and Uplift（照らし、高める）」をテーマに全AI生成作品を募集。”},
-    {h:”部門と尺”, b:[“Best AI Film（20分超）、Best AI Short Film（3〜20分）、Best AI Short Short Film（1〜3分）”,”Best AI AD (Commercial)＝AIで制作した広告動画が対象”,”Best AI Animation、Best AI Comedy、Best AI Inspirational Film、Best AI Uplifting Film”,”全作品はAI生成素材必須・直近2年以内の制作作品が対象・英語字幕要（英語以外の場合）”]},
-    {h:”締切・費用・応募方法”, b:[“Late Deadline：2026年7月6日（日）US$39〜”,”Extended Deadline（延長締切）：2026年8月10日（月）US$49〜”,”FilmFreeway（https://filmfreeway.com）経由で応募”]},
-    {h:”賞・受賞メリット”, b:[“各部門の勝者・ファイナリスト・セミファイナリストに公式ローレルを付与”,”受賞作は公式サイトおよびネットワーク（映画人・エージェント等数千人）で紹介”,”トークセッション・ネットワーキングへの招待あり”]},
-    {h:”AIMSでの活用アイデア”, b:”「Best AI AD (Commercial)」部門はAIMSの強みをそのまま発揮できる部門。AIヒューマンを使ったブランドCM・プロモーション映像を1本仕上げて応募すれば、世界への実績として使える。まずFilmFreewayに登録して作品の方向性を固め、7月6日（Late Deadline）または延長締切の8月10日を目標に制作スケジュールを組むとよい。”}
-  ]},
-  {start:”2026-07-14”, title:”amana creators talk FEATURED ARTIST LIVE【vol.6 CG Supervisor】”, type:”seminar”, format:”online”, time:”12:00–12:30”, area:”オンライン”, venue:”オンライン（Zoom）”, org:”アマナ”, fee:”無料”, themes:[“video”,”image”,”tools”], img:”https://insights.amana.jp/wp-content/uploads/2026/06/20260714_1200x630.jpg”, deadline:”2026-07-13”, score:68, why:”広告映像CGスーパーバイザーによる表現開発R&DとSNSループ映像テクニック。AI時代の映像制作マインドも語られる”, url:”https://insights.amana.jp/event/51941/”, desc:[
-    {h:”どんなイベント？”, b:”アマナのCGスーパーバイザーが登壇する30分のオンラインウェビナー（無料）。化粧品・医薬品広告を中心としたCG制作での「表現開発（R&D）」の軌跡と手法を深掘り。SNSで発表しているループ映像に隠されたテクニックやAI時代の映像制作マインドについても語られる。”},
-    {h:”得られること”, b:[“化粧品・医薬品の効果効能を視覚的に伝えるCG表現の設計思想”,”SNSループ映像に隠されたテクニック（リール制作に直結）”,”AI時代の映像業界でのものづくりへのマインドセット”]},
-    {h:”AIMSでの活用アイデア”, b:”AIヒューマンを使ったコスメ・美容系クライアント向け広告動画の制作にそのまま転用できるノウハウが期待できる。ループ映像のテクニックはリール制作にも直結。30分の軽い情報収集として視聴するのがおすすめ。申込締切は前日7月13日（月）15:00。”}
-  ]},
-  {start:”2026-08-27”, title:”AI博覧会 Summer 2026”, type:”expo”, format:”onsite”, time:”10:00–18:00”, area:”新宿区”, venue:”新宿住友ビル 三角広場”, org:”アイスマイリー”, fee:”入場無料（登録制）”, themes:[“business”,”marketing”,”image”], score:74, why:”AI総合EXPO。映像・アバター系の出展やデモを実機で確認できる”, url:”https://aismiley.co.jp/ai_hakurankai/”, desc:[
-    {h:"どんなイベント？", b:"生成AIの総合展示イベント。映像・画像・アバター・自動化など各社の最新ソリューションを一日で一望できる入場無料の展示会（新宿・要登録）。"},
-    {h:"得られること", b:["実機デモで“今すぐ使えるレベル”を体感","出展企業に直接相談できる","導入事例をまとめて収集"]},
-    {h:"AIMSでの活用アイデア", b:"AIヒューマン／アバター系や動画生成まわりの出展を重点チェックし、制作や受注広告に使えるツール・外部パートナーを探す“偵察”に最適。半日でも十分回れる。"}
-  ]},
-  {start:"2026-08-31", title:"Sparknify Human vs. AI Film Festival 2026（作品応募）", type:"contest", format:"online", time:"応募締切", area:"世界（オンライン応募）", venue:"オンライン応募", org:"Sparknify", fee:"早期応募は無料", themes:["video","image"], deadline:"2026-08-31", score:85, why:"応募できる世界のAI映像コンテスト。AI生成部門あり＝自社制作で1本出せる", url:"https://filmfreeway.com/humanvsai", desc:[
-    {h:"どんなコンテスト？", b:"世界規模のAI短編映画祭。テーマは「人間 vs AI」。ジャンルではなく“観客が見終わったあとに抱く感情”で審査されるのが最大の特徴。7つの感情（喜び／怒り／悲しみ／満足／愛／嫌悪／欲望）から1つを選んで競う。"},
-    {h:"応募部門・尺", b:["AI生成部門で応募（普段のAI制作ワークフローのままでOK）","もう一方は人間制作部門（生成AIの使用は禁止）","作品の長さ：1〜30分（クレジット込み）"]},
-    {h:"締切・費用・応募方法", b:["締切：2026年8月31日","早期エントリーなら応募は無料","提出：映画祭プラットフォーム「FilmFreeway」から","同じ作品を別の感情部門にも再応募できる（別々に審査）"]},
-    {h:"賞・本番", b:["最高賞「Humanity Award」＝賞金 US$3,000","各感情部門の受賞作の中から選出","2026年9月26日、サンフランシスコで上映＋授賞式・パネル討論・ネットワーキング"]},
-    {h:"作品の方向性（案）", b:"自社AI IPを主役にした1〜数分のショートストーリーが有力。感情は世界観に合うもの（例：愛／欲望）を1つに絞ると審査軸が明確になる。脚本は“何が起きるか”より“観客に何を残すか”を起点に設計。早期＝無料なので、まずFilmFreewayで登録だけ済ませ、締切から逆算して制作するのが安全。"}
-  ]},
-  {start:"2026-09-03", end:"2026-09-04", title:"AI Commerce EXPO / SNS運用戦略Expo 2026", type:"expo", format:"onsite", time:"10:00–18:00", area:"港区・浜松町", venue:"東京都立産業貿易センター浜松町館 5F", org:"ナノオプト・メディア", fee:"入場無料（登録制）", themes:["marketing","video","business"], score:90, why:"生成AI×SNS・動画・ブランドクリエイティブのハンズオン多数", url:"https://f2ff.jp/event/commerce-sns", desc:[
-    {h:"どんなイベント？", b:"生成AI×SNS運用・動画・ブランドクリエイティブに特化した専門展示会＋ハンズオン／セミナー。EC・インフルエンサー・ショート動画まわりの出展が集まる入場無料イベント（浜松町・要登録）。"},
-    {h:"得られること", b:["SNS運用・映像制作を効率化／自動化するAIツールの実機体験","最新の活用事例","出展企業との商談"]},
-    {h:"AIMSでの活用アイデア", b:"リール／フィード制作のワークフロー改善、受注広告の提案ネタ集め、AIヒューマン×SNSの最新トレンド把握に直結。2日間あるので複数人で手分けして回ると効率的。"}
-  ]},
-  {start:"2026-09-15", title:"第五回AIアートグランプリ（作品応募）", type:"contest", format:"online", time:"応募締切", area:"世界（オンライン応募）", venue:"オンライン応募（授賞式：ベルサール渋谷ファースト）", org:"AIアートグランプリ実行委員会（共催：ドスパラ／サードウェーブ）", fee:"要確認", themes:["image","video","tools"], img:"https://static.wixstatic.com/media/21b883_610d6610f48d4d55810e6cf0790a059e~mv2.png/v1/fill/w_1200,h_630,al_c/21b883_610d6610f48d4d55810e6cf0790a059e~mv2.png", deadline:"2026-09-15", score:88, why:"国内有数のAIアート公募。画像・映像などAI活用作品が対象で、自社制作の腕試しと実績づくりに最適", url:"https://www.aiartgrandprix.com/", desc:[
-    {h:"どんなコンテスト？", b:"AIを活用したアート作品を広く募集し、人間の創造力とAIの可能性を融合させた作品を表彰する国内有数の公募。今回で第五回、共催はドスパラ（サードウェーブ）、後援にデジタルコンテンツ協会（DCAJ）など。第五回のテーマは「調和」。"},
-    {h:"締切・スケジュール", b:["作品エントリー期間：2026年8月1日〜9月15日","グランプリ授賞式：2026年11月7日（ベルサール渋谷ファースト、AIフェスティバル2026会場内）","応募要項の詳細は公式サイトで順次発表"]},
-    {h:"AIMSでの活用アイデア", b:"画像・映像・音楽などAIを駆使した作品が対象で、自社IPを使った映像やビジュアル作品で挑戦しやすい。テーマ「調和」に沿って自社AIヒューマンの世界観を1作品にまとめると軸が明確になる。受賞は対外的なポートフォリオとして強力。締切（9/15）から逆算して制作計画を立てるのが安全。"}
-  ]},
-  {start:"2026-10-05", end:"2026-10-07", title:"生成AIサミット（GenAI/SUM）2026", type:"conference", format:"onsite", time:"終日", area:"千代田区・九段下", venue:"九段会館テラス", org:"日本経済新聞社", fee:"要確認", themes:["business"], score:62, why:"経営・業界トレンドの把握向け（制作直結は弱め・参考枠）", url:"https://www.xsum.jp/gai/", desc:[
-    {h:"どんなイベント？", b:"日経新聞社主催の大型サミット。生成AIの経営・産業・制度面を、シンポジウム・ワークショップ・ピッチなどで扱う。"},
-    {h:"得られること", b:["業界全体の動向","企業導入の潮流","政策・ルールの最新情報"]},
-    {h:"AIMSでの位置づけ", b:"制作現場のノウハウより“経営・事業の視点”が中心。制作への直結度は低めなので、興味のある人が情報収集として参加する“参考枠”。"}
-  ]}
+  {"start":"2026-07-14","title":"amana creators talk FEATURED ARTIST LIVE【vol.6 CG Supervisor】","type":"seminar","format":"online","time":"12:00–12:30","area":"オンライン","venue":"オンライン（Zoom）","org":"アマナ","fee":"無料","themes":["video","image","tools"],"img":"https://insights.amana.jp/wp-content/uploads/2026/06/20260714_1200x630.jpg","deadline":"2026-07-13","score":68,"why":"広告映像CGスーパーバイザーによる表現開発R&DとSNSループ映像テクニック。AI時代の映像制作マインドも語られる","url":"https://insights.amana.jp/event/51941/","desc":[{"h":"どんなイベント？","b":"アマナのCGスーパーバイザーが登壇する30分のオンラインウェビナー（無料）。化粧品・医薬品広告を中心としたCG制作での「表現開発（R&D）」の軌跡と手法を深掘り。SNSで発表しているループ映像に隠されたテクニックやAI時代の映像制作マインドについても語られる。"},{"h":"得られること","b":["化粧品・医薬品の効果効能を視覚的に伝えるCG表現の設計思想","SNSループ映像に隠されたテクニック（リール制作に直結）","AI時代の映像業界でのものづくりへのマインドセット"]},{"h":"AIMSでの活用アイデア","b":"AIヒューマンを使ったコスメ・美容系クライアント向け広告動画の制作にそのまま転用できるノウハウが期待できる。ループ映像のテクニックはリール制作にも直結。30分の軽い情報収集として視聴するのがおすすめ。申込締切は前日7月13日（月）15:00。"}]},
+  {"start":"2026-07-17","title":"AI HUMAN × BRANDING｜AIヒューマンで紐解く、次世代型ブランディング戦略","type":"seminar","format":"online","time":"12:00–12:50","area":"オンライン","venue":"オンライン（Zoom）","org":"アマナ","fee":"無料","themes":["video","marketing","business"],"img":"https://insights.amana.jp/wp-content/uploads/2026/07/260717_AIHuman_webinar_1200x630.jpg","deadline":"2026-07-16","score":95,"why":"戦略型AIヒューマンでブランド人格を可視化する設計手法がテーマ。AIMSの祖業とど真ん中で重なる回","url":"https://insights.amana.jp/event/52088/","desc":[{"h":"どんなイベント？","b":"戦略型AIヒューマンを活用し、ブランドパーソナリティを可視化・具体化する次世代のブランド設計を紹介する無料オンラインウェビナー（50分）。急速に拡大するAIヒューマン市場の最新トレンドを押さえながら、ブランドの「内側（理念・価値観・人格）」を「外側（ビジュアル・語り口・顧客体験）」へどう落とし込むかを、応用事例を交えて解説する。"},{"h":"得られること","b":["AIヒューマン市場の最新トレンドと活用の考え方","ブランド人格を可視化・具体化する設計プロセス","マーケティングDX・コミュニケーション最適化への応用視点"]},{"h":"AIMSでの活用アイデア","b":"AIMSの祖業である戦略型AIヒューマン事業そのものがテーマの回。自社IP「Neu」の人格設計や、受注案件でクライアントにAIヒューマン活用を提案する際のトーク材料として直結する内容が期待できる。申込締切は前日7月16日（木）15:00・定員100名（応募多数の場合抽選）。"}]},
+  {"start":"2026-07-21","title":"amana creators talk FEATURED ARTIST LIVE【vol.7 Photographer】","type":"seminar","format":"online","time":"12:00–12:45","area":"オンライン","venue":"オンライン（録画配信）","org":"アマナ","fee":"無料","themes":["video","image","tools"],"img":"https://insights.amana.jp/wp-content/uploads/2026/07/20260721_1200x630.jpg","deadline":"2026-07-17","score":66,"why":"広告ビジュアル制作の現場知見。CGやAIを交えた表現手法・協業プロセスが学べる","url":"https://insights.amana.jp/event/52036/","desc":[{"h":"どんなイベント？","b":"「amana creators talk」シリーズ第7弾。人物とプロダクトを同じ世界観で捉える表現を得意とするフォトグラファーと、アートディレクター、プロデューサーが登壇し、CGやAIなど新しい技術を交えた作品制作の手法や協業プロセスを語る45分のオンラインウェビナー（無料・録画配信）。"},{"h":"得られること","b":["偶発性や違和感を取り入れた表現手法","アートディレクターとフォトグラファーの協業プロセス","広告ビジュアル制作の現場知見"]},{"h":"AIMSでの活用アイデア","b":"AIヒューマン映像で「見る人の心に余韻を残す」表現づくりや、外部クリエイターとの協業プロセスの参考になる回。申込締切は7月17日（金）15:00。"}]},
+  {"start":"2026-08-10","title":"Red Rocks AI Film Festival 2026（作品応募・延長締切）","type":"contest","format":"hybrid","time":"応募締切（延長締切：8/10）","area":"世界（オンライン応募）","venue":"オンライン応募（本祭：Electric Theater Center, Utah, USA）","org":"Red Rocks AI Film Festival","fee":"US$49〜（延長締切）","themes":["video","image","marketing"],"img":"https://filmfreeway-production-storage-01-connector.filmfreeway.com/festivals/logos/000/086/744/large/logo.jpg?1739865758","deadline":"2026-08-10","score":75,"why":"Best AI AD部門あり＝AIヒューマン×広告動画で応募できる世界のAI映像コンテスト","url":"https://filmfreeway.com/RedRocksAIFilmFestival","desc":[{"h":"どんなコンテスト？","b":"AIを使った映像作品の制作者を表彰するグローバルな映画祭。2026年9月24日（水）にユタ州セントジョージで開催・オンライン配信も実施。「Illuminate and Uplift（照らし、高める）」をテーマに全AI生成作品を募集。通常・Late締切は終了し、現在は延長締切のみ受付中。"},{"h":"部門・尺・締切","b":["Best AI Film（20分超）、Best AI Short Film（3〜20分）、Best AI Short Short Film（1〜3分）","Best AI AD (Commercial)＝AIで制作した広告動画が対象","Best AI Animation、Best AI Comedy、Best AI Inspirational Film、Best AI Uplifting Film","Extended Deadline（延長締切）：2026年8月10日（月）US$49〜、FilmFreeway経由で応募"]},{"h":"賞・受賞メリット","b":["各部門の勝者・ファイナリスト・セミファイナリストに公式ローレルを付与","受賞作は公式サイトおよびネットワーク（映画人・エージェント等数千人）で紹介","トークセッション・ネットワーキングへの招待あり"]},{"h":"AIMSでの活用アイデア","b":"「Best AI AD (Commercial)」部門はAIMSの強みをそのまま発揮できる部門。AIヒューマンを使ったブランドCM・プロモーション映像を1本仕上げて応募すれば、世界への実績として使える。延長締切の8月10日を目標に制作スケジュールを組むとよい。"}]},
+  {"start":"2026-08-27","title":"AI博覧会 Summer 2026","type":"expo","format":"onsite","time":"10:00–18:00","area":"新宿区","venue":"新宿住友ビル 三角広場","org":"アイスマイリー","fee":"入場無料（登録制）","themes":["business","marketing","image"],"score":74,"why":"AI総合EXPO。映像・アバター系の出展やデモを実機で確認できる","url":"https://aismiley.co.jp/ai_hakurankai/","desc":[{"h":"どんなイベント？","b":"生成AIの総合展示イベント。映像・画像・アバター・自動化など各社の最新ソリューションを一日で一望できる入場無料の展示会（新宿・要登録）。"},{"h":"得られること","b":["実機デモで“今すぐ使えるレベル”を体感","出展企業に直接相談できる","導入事例をまとめて収集"]},{"h":"AIMSでの活用アイデア","b":"AIヒューマン／アバター系や動画生成まわりの出展を重点チェックし、制作や受注広告に使えるツール・外部パートナーを探す“偵察”に最適。半日でも十分回れる。"}]},
+  {"start":"2026-08-31","title":"Sparknify Human vs. AI Film Festival 2026（作品応募）","type":"contest","format":"online","time":"応募締切","area":"世界（オンライン応募）","venue":"オンライン応募","org":"Sparknify","fee":"早期応募は無料","themes":["video","image"],"deadline":"2026-08-31","score":85,"why":"応募できる世界のAI映像コンテスト。AI生成部門あり＝自社制作で1本出せる","url":"https://filmfreeway.com/humanvsai","desc":[{"h":"どんなコンテスト？","b":"世界規模のAI短編映画祭。テーマは「人間 vs AI」。ジャンルではなく“観客が見終わったあとに抱く感情”で審査されるのが最大の特徴。7つの感情（喜び／怒り／悲しみ／満足／愛／嫌悪／欲望）から1つを選んで競う。"},{"h":"応募部門・尺・締切","b":["AI生成部門で応募（普段のAI制作ワークフローのままでOK）","もう一方は人間制作部門（生成AIの使用は禁止）","作品の長さ：1〜30分（クレジット込み）","締切：2026年8月31日・早期エントリーなら応募は無料・提出は「FilmFreeway」から"]},{"h":"賞・本番","b":["最高賞「Humanity Award」＝賞金 US$3,000","各感情部門の受賞作の中から選出","2026年9月26日、サンフランシスコで上映＋授賞式・パネル討論・ネットワーキング"]},{"h":"作品の方向性（案）","b":"自社AI IPを主役にした1〜数分のショートストーリーが有力。感情は世界観に合うもの（例：愛／欲望）を1つに絞ると審査軸が明確になる。脚本は“何が起きるか”より“観客に何を残すか”を起点に設計。早期＝無料なので、まずFilmFreewayで登録だけ済ませ、締切から逆算して制作するのが安全。"}]},
+  {"start":"2026-09-01","title":"New Technologies AI Film Festival（作品応募・延長締切）","type":"contest","format":"online","time":"応募締切（延長締切：9/1）","area":"世界（オンライン応募）","venue":"オンライン応募（本祭：Uzhhorod, Ukraine）","org":"New Technologies AI Film Festival","fee":"US$27〜（延長締切）","themes":["video","image"],"img":"https://filmfreeway-production-storage-01-connector.filmfreeway.com/festivals/logos/000/092/460/large/logo.jpg?1770019571","deadline":"2026-09-01","score":78,"why":"Vertical Films・Music Videos部門あり＝SNS向け縦型映像やMVでそのまま応募できる世界のAI映画祭","url":"https://filmfreeway.com/NewTechnologiesAIFilmFestival","desc":[{"h":"どんなコンテスト？","b":"映画とAIの融合をテーマにした国際コンテスト（第1回）。短編・長編・実験的作品を対象に、Narrative／Animation／Sci-Fi／Fantasy／Music Videos／Vertical Films など複数部門で作品を募集。AIの手を借りて制作された作品が対象で、英語以外の場合は英語字幕が必要。"},{"h":"部門と締切","b":["Vertical Films AI部門・Music Videos AI部門はSNS向けの縦型・音楽系映像がそのまま出品対象","Extended Deadline（延長締切）：2026年9月1日（早期・通常・Late締切は終了）","本祭：2026年9月11日〜12日開催"]},{"h":"賞・受賞メリット","b":"各部門の優勝作品に「New Technologies AI」トロフィーを贈呈（評価額US$2,000相当）。受賞者は公式メディア・提携メディアでインタビュー掲載。提携映画祭への出品優待コードも付与される。"},{"h":"AIMSでの活用アイデア","b":"Vertical Films部門はリール・ショート動画制作の延長線上で挑戦しやすい部門。自社AI IP「Neu」を主役にした縦型ショートストーリーを1本仕上げ、9月1日の延長締切に向けてFilmFreewayから応募するのが狙い目。"}]},
+  {"start":"2026-09-03","end":"2026-09-04","title":"AI Commerce EXPO / SNS運用戦略Expo 2026","type":"expo","format":"onsite","time":"10:00–18:00","area":"港区・浜松町","venue":"東京都立産業貿易センター浜松町館 5F","org":"ナノオプト・メディア","fee":"入場無料（登録制）","themes":["marketing","video","business"],"score":90,"why":"生成AI×SNS・動画・ブランドクリエイティブのハンズオン多数","url":"https://f2ff.jp/event/commerce-sns","desc":[{"h":"どんなイベント？","b":"生成AI×SNS運用・動画・ブランドクリエイティブに特化した専門展示会＋ハンズオン／セミナー。EC・インフルエンサー・ショート動画まわりの出展が集まる入場無料イベント（浜松町・要登録）。"},{"h":"得られること","b":["SNS運用・映像制作を効率化／自動化するAIツールの実機体験","最新の活用事例","出展企業との商談"]},{"h":"AIMSでの活用アイデア","b":"リール／フィード制作のワークフロー改善、受注広告の提案ネタ集め、AIヒューマン×SNSの最新トレンド把握に直結。2日間あるので複数人で手分けして回ると効率的。"}]},
+  {"start":"2026-09-15","title":"第五回AIアートグランプリ（作品応募）","type":"contest","format":"online","time":"応募締切","area":"世界（オンライン応募）","venue":"オンライン応募（授賞式：ベルサール渋谷ファースト）","org":"AIアートグランプリ実行委員会（共催：ドスパラ／サードウェーブ）","fee":"要確認","themes":["image","video","tools"],"img":"https://static.wixstatic.com/media/21b883_610d6610f48d4d55810e6cf0790a059e~mv2.png/v1/fill/w_1200,h_630,al_c/21b883_610d6610f48d4d55810e6cf0790a059e~mv2.png","deadline":"2026-09-15","score":88,"why":"国内有数のAIアート公募。画像・映像などAI活用作品が対象で、自社制作の腕試しと実績づくりに最適","url":"https://www.aiartgrandprix.com/","desc":[{"h":"どんなコンテスト？","b":"AIを活用したアート作品を広く募集し、人間の創造力とAIの可能性を融合させた作品を表彰する国内有数の公募。今回で第五回、共催はドスパラ（サードウェーブ）、後援にデジタルコンテンツ協会（DCAJ）など。第五回のテーマは「調和」。"},{"h":"締切・スケジュール","b":["作品エントリー期間：2026年8月1日〜9月15日","グランプリ授賞式：2026年11月7日（ベルサール渋谷ファースト、AIフェスティバル2026会場内）","応募要項の詳細は公式サイトで順次発表"]},{"h":"AIMSでの活用アイデア","b":"画像・映像・音楽などAIを駆使した作品が対象で、自社IPを使った映像やビジュアル作品で挑戦しやすい。テーマ「調和」に沿って自社AIヒューマンの世界観を1作品にまとめると軸が明確になる。受賞は対外的なポートフォリオとして強力。締切（9/15）から逆算して制作計画を立てるのが安全。"}]},
+  {"start":"2026-10-05","end":"2026-10-07","title":"生成AIサミット（GenAI/SUM）2026","type":"conference","format":"onsite","time":"終日","area":"千代田区・九段下","venue":"九段会館テラス","org":"日本経済新聞社","fee":"要確認","themes":["business"],"score":62,"why":"経営・業界トレンドの把握向け（制作直結は弱め・参考枠）","url":"https://www.xsum.jp/gai/","desc":[{"h":"どんなイベント？","b":"日経新聞社主催の大型サミット。生成AIの経営・産業・制度面を、シンポジウム・ワークショップ・ピッチなどで扱う。"},{"h":"得られること","b":["業界全体の動向","企業導入の潮流","政策・ルールの最新情報"]},{"h":"AIMSでの位置づけ","b":"制作現場のノウハウより“経営・事業の視点”が中心。制作への直結度は低めなので、興味のある人が情報収集として参加する“参考枠”。"}]}
 ];
 // =========================== EVENTS_END ===========================
 
@@ -462,5 +428,226 @@ const ARCHIVE = [
 // =========================== ARCHIVE_END ===========================
 
 const WD=["日","月","火","水","木","金","土"];
-const TODAY=new Date(2026,5,30); // 2026-06-30
-function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+const TODAY=new Date(2026,6,6); // 2026-07-06
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));}
+function safeUrl(u){u=String(u==null?"":u).trim();return /^https?:\/\//i.test(u)?u:"#";}
+function stars(s){s=+s||0;return s>=85?"★★★":s>=70?"★★":"★";}
+
+document.querySelectorAll(".tab").forEach(t=>{
+  t.onclick=()=>{
+    document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+    document.querySelectorAll(".panel").forEach(x=>x.classList.remove("active"));
+    document.querySelectorAll(".side-sec").forEach(x=>x.classList.remove("active"));
+    t.classList.add("active");
+    document.getElementById("panel-"+t.dataset.tab).classList.add("active");
+    document.getElementById("side-"+t.dataset.tab).classList.add("active");
+  };
+});
+
+const TYPE_LABEL={contest:"コンテスト・大会",expo:"大型EXPO・展示会",conference:"カンファレンス",seminar:"セミナー・講座",meetup:"勉強会・交流会"};
+const FMT_LABEL={onsite:"現地",hybrid:"ハイブリッド",online:"オンライン"};
+const THEME_LABEL={video:"動画・映像",image:"画像・デザイン",marketing:"マーケ・SNS",tools:"ツール・エージェント",business:"ビジネス活用"};
+const CAT_LABEL={model:"モデル・ツール",video:"動画生成",image:"画像生成",industry:"業界・ビジネス",creative:"マーケ・クリエイティブ"};
+
+const cstate={year:2026,month:5,q:"",sort:"asc",
+  types:new Set(["contest","expo","conference","seminar","meetup"]),
+  fmts:new Set(["onsite","hybrid","online"]),
+  themes:new Set(["video","image","marketing","tools","business"])};
+function parse(d){const[a,b,c]=d.split("-").map(Number);return new Date(a,b-1,c);}
+function inRange(ev,day){const s=parse(ev.start);const e=ev.end?parse(ev.end):s;return day>=s&&day<=e;}
+function matchEv(ev){if(!cstate.q)return true;return (ev.title+ev.venue+ev.org+ev.area).toLowerCase().includes(cstate.q);}
+function passC(ev){return cstate.types.has(ev.type)&&cstate.fmts.has(ev.format)&&ev.themes.some(t=>cstate.themes.has(t))&&matchEv(ev);}
+function sameDay(a,b){return a.getFullYear()==b.getFullYear()&&a.getMonth()==b.getMonth()&&a.getDate()==b.getDate();}
+function isThisWeek(ev){const s=parse(ev.start);const diff=(s-TODAY)/86400000;return diff>=-0.5&&diff<=7;}
+function deadlineInfo(ev){
+  if(!ev.deadline)return{txt:"申込: 公式ページで確認",cls:"dl-open"};
+  const dl=parse(ev.deadline);const days=Math.ceil((dl-TODAY)/86400000);const md=`${dl.getMonth()+1}/${dl.getDate()}`;
+  const label=ev.type==="contest"?"応募締切":"申込締切";
+  if(days<0)return{txt:label+"（終了）",cls:"dl-ended"};
+  if(days===0)return{txt:"🔥 本日"+label,cls:"dl-urgent"};
+  if(days<=3)return{txt:`🔥 ${label}間近 あと${days}日（${md}まで）`,cls:"dl-urgent"};
+  if(days<=7)return{txt:`⏰ ${label}まで${days}日（${md}まで）`,cls:"dl-soon"};
+  return{txt:`${label} ${md}`,cls:"dl-normal"};
+}
+function evDateStr(ev){const s=parse(ev.start);
+  return ev.end?`${s.getMonth()+1}/${s.getDate()}〜${parse(ev.end).getMonth()+1}/${parse(ev.end).getDate()}`:`${s.getMonth()+1}/${s.getDate()}(${WD[s.getDay()]})`;}
+function fmtDate(d){const p=d.split("-");return p.length===3?`${p[0]}.${p[1]}.${p[2]}`:p.length===2?`${p[0]}.${p[1]}`:d;}
+function isNew(d){const p=d.split("-");if(p.length<3)return false;const dt=new Date(+p[0],+p[1]-1,+p[2]);const diff=(TODAY-dt)/86400000;return diff>=0&&diff<=3;}
+function ndate(d){const p=d.split("-");return p.length>=2?new Date(+p[0],+p[1]-1,+(p[2]||1)):new Date(+p[0],0,1);}
+
+function renderSections(secs){
+  if(!secs||!secs.length)return"";
+  return secs.map(s=>{
+    let body;
+    if(Array.isArray(s.b)){body=`<ul class="dul">${s.b.map(x=>`<li>${esc(x)}</li>`).join("")}</ul>`;}
+    else{body=`<p>${esc(s.b)}</p>`;}
+    return `<div class="dsec"><div class="dsec-h">${esc(s.h)}</div>${body}</div>`;
+  }).join("");
+}
+function openDetail(it,kind){
+  const c=document.getElementById("dcontent");
+  const heroImg=it.img?`<div class="dhero"><img src="${esc(safeUrl(it.img))}" alt="" onerror="this.parentNode.style.display='none'"></div>`:"";
+  let body="";
+  if(kind==="event"){
+    const dl=deadlineInfo(it);
+    const tags=(it.themes||[]).map(t=>`<span class="tag">${esc(THEME_LABEL[t]||t)}</span>`).join("");
+    body=`<div class="ntop"><span class="badge ${esc(it.type)}">${esc(TYPE_LABEL[it.type]||it.type)}</span><span class="fmt ${esc(it.format)}">${esc(FMT_LABEL[it.format]||it.format)}</span></div>
+      <h2 class="dtitle">${esc(it.title)}</h2>
+      ${it.score?`<div class="dfit"><span class="fit">★ AIMS適合 ${stars(it.score)}</span><span class="why">${esc(it.why||"")}</span></div>`:""}
+      <div class="dlbar ${dl.cls}">${esc(dl.txt)}</div>
+      <table class="dtable">
+        <tr><th>日付</th><td>${esc(evDateStr(it))}</td></tr>
+        <tr><th>時間</th><td>${esc(it.time)}</td></tr>
+        <tr><th>会場</th><td>${esc(it.venue)}（${esc(it.area)}）</td></tr>
+        <tr><th>主催</th><td>${esc(it.org)}</td></tr>
+        <tr><th>料金</th><td>${esc(it.fee)}</td></tr>
+        <tr><th>テーマ</th><td>${tags}</td></tr>
+      </table>
+      ${renderSections(it.desc)}
+      <a class="dcta" href="${esc(safeUrl(it.url))}" target="_blank" rel="noopener">公式ページを開く →</a>
+      <div class="dhint">※ 申込・最新情報は公式ページでご確認ください。</div>`;
+  }else{
+    body=`<div class="ntop"><span class="cat ${esc(it.cat)}">${esc(CAT_LABEL[it.cat]||it.cat)}</span>${it.score?`<span class="fit">★ AIMS適合 ${stars(it.score)}</span>`:""}<span class="src">🏷 ${esc(it.src)}</span>${it.readmin?`<span class="rtime">🕐 約${(+it.readmin)||1}分</span>`:""}<span class="ndate">${esc(fmtDate(it.date))}</span></div>
+      <h2 class="dtitle">${esc(it.title)}</h2>
+      <p class="dsum">${esc(it.summary)}</p>
+      ${it.why?`<div class="dfit"><span class="why">💡 ${esc(it.why)}</span></div>`:""}
+      ${renderSections(it.desc)}
+      <a class="dcta" href="${esc(safeUrl(it.url))}" target="_blank" rel="noopener">記事を読む →</a>
+      <div class="dhint">※ 全文・画像は出典元でご確認ください。</div>`;
+  }
+  c.innerHTML=heroImg+`<div class="dbody">${body}</div>`;
+  document.getElementById("drawer").classList.add("open");
+  document.body.style.overflow="hidden";
+}
+function closeDrawer(){document.getElementById("drawer").classList.remove("open");document.body.style.overflow="";}
+document.getElementById("dclose").onclick=closeDrawer;
+document.getElementById("dbackdrop").onclick=closeDrawer;
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDrawer();});
+function cardClick(e,it,kind){if(e.metaKey||e.ctrlKey||e.shiftKey||e.button===1)return;e.preventDefault();openDetail(it,kind);}
+
+function renderCalendar(){
+  document.getElementById("monthLabel").textContent=`${cstate.year}年 ${cstate.month+1}月`;
+  const grid=document.getElementById("grid");grid.innerHTML="";
+  const startDow=new Date(cstate.year,cstate.month,1).getDay();
+  const dim=new Date(cstate.year,cstate.month+1,0).getDate();
+  const total=Math.ceil((startDow+dim)/7)*7;
+  for(let i=0;i<total;i++){
+    const dn=i-startDow+1;const cell=document.createElement("div");cell.className="cell";
+    if(dn<1||dn>dim){cell.classList.add("out");grid.appendChild(cell);continue;}
+    const date=new Date(cstate.year,cstate.month,dn);
+    if(sameDay(date,TODAY))cell.classList.add("today");
+    const num=document.createElement("div");num.className="num";num.textContent=dn;cell.appendChild(num);
+    EVENTS.filter(passC).filter(ev=>inRange(ev,date)).forEach(ev=>{
+      const a=document.createElement("a");a.className="ev "+ev.type;a.href=safeUrl(ev.url);a.target="_blank";a.rel="noopener";
+      a.textContent=ev.title;a.title=ev.title;a.onclick=(e)=>cardClick(e,ev,"event");cell.appendChild(a);});
+    grid.appendChild(cell);
+  }
+}
+function renderAgenda(){
+  let list=EVENTS.filter(passC).sort((a,b)=>parse(a.start)-parse(b.start));
+  if(cstate.sort==="desc")list.reverse();
+  const wrap=document.getElementById("agenda");wrap.innerHTML="";
+  if(!list.length){wrap.innerHTML='<div class="empty">条件に合うイベントがありません。検索や絞り込みを調整してください。</div>';updateCount();return;}
+  list.forEach(ev=>{
+    const a=document.createElement("a");a.className="row";a.href=safeUrl(ev.url);a.target="_blank";a.rel="noopener";
+    a.onclick=(e)=>cardClick(e,ev,"event");
+    const img=ev.img?`<img src="${esc(safeUrl(ev.img))}" loading="lazy" alt="" onerror="this.remove()">`:"";
+    const tags=ev.themes.map(t=>`<span class="tag">${esc(THEME_LABEL[t]||t)}</span>`).join("");
+    const week=isThisWeek(ev)?'<span class="weekb">今週</span>':'';
+    const d=deadlineInfo(ev);
+    const fit=ev.score?`<div class="fitrow"><span class="fit">★ AIMS適合 ${stars(ev.score)}</span><span class="why">${esc(ev.why||"")}</span></div>`:"";
+    a.innerHTML=`<div class="ethumb ${esc(ev.type)}">${img}<span class="edate">${esc(evDateStr(ev))}</span></div>
+      <div class="rbody"><div class="rtitle">${esc(ev.title)}${week}</div>${fit}<div class="dlbar ${d.cls}">${esc(d.txt)}</div>
+      <div class="meta"><span class="badge ${esc(ev.type)}">${esc(TYPE_LABEL[ev.type]||ev.type)}</span><span class="fmt ${esc(ev.format)}">${esc(FMT_LABEL[ev.format]||ev.format)}</span>
+      <span>🕘 ${esc(ev.time)}</span><span>📍 ${esc(ev.venue)}（${esc(ev.area)}）</span><span>💴 ${esc(ev.fee)}</span><span>🏢 ${esc(ev.org)}</span></div>
+      <div class="tags">${tags}</div></div>`;
+    wrap.appendChild(a);
+  });
+  updateCount();
+}
+function renderCal(){renderCalendar();renderAgenda();}
+document.getElementById("prev").onclick=()=>{cstate.month--;if(cstate.month<0){cstate.month=11;cstate.year--;}renderCalendar();};
+document.getElementById("next").onclick=()=>{cstate.month++;if(cstate.month>11){cstate.month=0;cstate.year++;}renderCalendar();};
+document.getElementById("todayBtn").onclick=()=>{cstate.year=2026;cstate.month=5;renderCalendar();};
+document.getElementById("qcal").oninput=e=>{cstate.q=e.target.value.trim().toLowerCase();renderCal();};
+document.querySelectorAll("#sortcal button").forEach(b=>b.onclick=()=>{
+  cstate.sort=b.dataset.s;document.querySelectorAll("#sortcal button").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderAgenda();});
+
+function newsCard(n,hero){
+  const img=n.img?`<img src="${esc(safeUrl(n.img))}" loading="lazy" alt="" onerror="this.remove()">`:"";
+  const fit=n.score?`<span class="fit">★ AIMS適合 ${stars(n.score)}</span>`:"";
+  const meta=`<div class="ntop"><span class="cat ${esc(n.cat)}">${esc(CAT_LABEL[n.cat]||n.cat)}</span>${fit}<span class="src">🏷 ${esc(n.src)}</span>${n.readmin?`<span class="rtime">🕐 約${(+n.readmin)||1}分</span>`:""}
+      <span class="ndate">${esc(fmtDate(n.date))}</span>${isNew(n.date)?'<span class="newb">NEW</span>':''}</div>`;
+  const why=n.why?`<div class="fitrow"><span class="why">💡 ${esc(n.why)}</span></div>`:"";
+  if(hero){const a=document.createElement("a");a.className="hero "+esc(n.cat);a.href=safeUrl(n.url);a.target="_blank";a.rel="noopener";
+    a.onclick=(e)=>cardClick(e,n,"news");
+    a.innerHTML=`<div class="hthumb"><span class="feat">注目</span>${img}</div>
+      <div class="hbody">${meta}<div class="htitle">${esc(n.title)}</div><p>${esc(n.summary)}</p>${why}<span class="more">詳細を見る →</span></div>`;
+    return a;}
+  const a=document.createElement("a");a.className="item "+esc(n.cat);a.href=safeUrl(n.url);a.target="_blank";a.rel="noopener";
+  a.onclick=(e)=>cardClick(e,n,"news");
+  a.innerHTML=`<div class="thumb">${img}</div><div class="ibody">${meta}<h3>${esc(n.title)}</h3><p>${esc(n.summary)}</p>${why}</div>`;
+  return a;
+}
+const nstate={q:"",sort:"desc",cats:new Set(["model","video","image","industry","creative"])};
+function passN(n){if(!nstate.cats.has(n.cat))return false;if(nstate.q&&!(n.title+n.summary+n.src).toLowerCase().includes(nstate.q))return false;return true;}
+function renderNews(){
+  let list=NEWS.filter(passN).sort((a,b)=>ndate(b.date)-ndate(a.date));
+  if(nstate.sort==="asc")list.reverse();
+  const hero=document.getElementById("hero");const wrap=document.getElementById("list");
+  hero.innerHTML="";wrap.innerHTML="";
+  if(!list.length){wrap.innerHTML='<div class="empty">条件に合う記事がありません。検索やカテゴリを調整してください。</div>';updateCount();return;}
+  hero.appendChild(newsCard(list[0],true));
+  list.slice(1).forEach(n=>wrap.appendChild(newsCard(n,false)));
+  updateCount();
+}
+document.getElementById("qnews").oninput=e=>{nstate.q=e.target.value.trim().toLowerCase();renderNews();};
+document.querySelectorAll("#sortnews button").forEach(b=>b.onclick=()=>{
+  nstate.sort=b.dataset.s;document.querySelectorAll("#sortnews button").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderNews();});
+
+const astate={q:"",sort:"desc",cats:new Set(["model","video","image","industry","creative"])};
+function passA(n){if(!astate.cats.has(n.cat))return false;if(astate.q&&!(n.title+n.summary+n.src).toLowerCase().includes(astate.q))return false;return true;}
+function renderArchive(){
+  let list=ARCHIVE.filter(passA).sort((a,b)=>ndate(b.date)-ndate(a.date));
+  if(astate.sort==="asc")list.reverse();
+  const wrap=document.getElementById("archlist");wrap.innerHTML="";
+  if(!list.length){wrap.innerHTML='<div class="empty">条件に合う記事がありません。検索やカテゴリを調整してください。</div>';updateCount();return;}
+  let cur="";
+  list.forEach(n=>{const dt=ndate(n.date);const mk=`${dt.getFullYear()}年${dt.getMonth()+1}月`;
+    if(mk!==cur){cur=mk;const h=document.createElement("div");h.className="monthhdr";h.textContent=mk;wrap.appendChild(h);}
+    wrap.appendChild(newsCard(n,false));});
+  updateCount();
+}
+document.getElementById("qarch").oninput=e=>{astate.q=e.target.value.trim().toLowerCase();renderArchive();};
+document.querySelectorAll("#sortarch button").forEach(b=>b.onclick=()=>{
+  astate.sort=b.dataset.s;document.querySelectorAll("#sortarch button").forEach(x=>x.classList.remove("active"));b.classList.add("active");renderArchive();});
+
+function bind(sel,set,attr,cb){document.querySelectorAll(sel).forEach(c=>{c.classList.add("active");
+  c.onclick=()=>{const v=c.dataset[attr];if(set.has(v)){set.delete(v);c.classList.remove("active");}else{set.add(v);c.classList.add("active");}cb();};});}
+bind(".fitem[data-k]",cstate.types,"k",renderCal);
+bind(".fitem[data-fmt]",cstate.fmts,"fmt",renderCal);
+bind(".fitem[data-theme]",cstate.themes,"theme",renderCal);
+bind(".fitem[data-c]",nstate.cats,"c",renderNews);
+bind(".fitem[data-ac]",astate.cats,"ac",renderArchive);
+
+const ALL={k:{set:cstate.types,attr:"k",all:["contest","expo","conference","seminar","meetup"],cb:renderCal},
+           fmt:{set:cstate.fmts,attr:"fmt",all:["onsite","hybrid","online"],cb:renderCal},
+           theme:{set:cstate.themes,attr:"theme",all:["video","image","marketing","tools","business"],cb:renderCal},
+           c:{set:nstate.cats,attr:"c",all:["model","video","image","industry","creative"],cb:renderNews},
+           ac:{set:astate.cats,attr:"ac",all:["model","video","image","industry","creative"],cb:renderArchive}};
+document.querySelectorAll(".fall").forEach(b=>{b.onclick=()=>{
+  const g=ALL[b.dataset.all];const turnOn=g.set.size<g.all.length;
+  g.all.forEach(v=>{const el=document.querySelector(`.fitem[data-${g.attr}="${v}"]`);
+    if(turnOn){g.set.add(v);el.classList.add("active");}else{g.set.delete(v);el.classList.remove("active");}});
+  g.cb();
+};});
+
+function updateCount(){
+  const ec=EVENTS.filter(passC).length;const nc=NEWS.filter(passN).length;const ac=ARCHIVE.filter(passA).length;
+  document.getElementById("count").textContent=`表示中：イベント ${ec}件 ／ 最新ニュース ${nc}件 ／ アーカイブ ${ac}件`;
+}
+
+renderCal();renderNews();renderArchive();
+</script>
+</body>
+</html>
